@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # repo-add -s -n -R ctlos_repo.db.tar.gz *.pkg.tar.xz
-repo-add -n -R ctlos_repo.db.tar.gz *.pkg.tar.xz
-repo-add -n -R ctlos_repo.db.tar.gz *.pkg.tar.zst
+repo-add -s -n -R ctlos_repo.db.tar.gz *.pkg.tar.xz
+repo-add -s -n -R ctlos_repo.db.tar.gz *.pkg.tar.zst
 
 rm ctlos_repo.db
 cp -f ctlos_repo.db.tar.gz ctlos_repo.db
