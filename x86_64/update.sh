@@ -1,5 +1,9 @@
 #!/bin/bash
 
+local_repo=/media/files/github/ctlos/ctlos_repo/x86_64
+dest_osdn=creio@storage.osdn.net:/storage/groups/c/ct/ctlos/ctlos_repo/
+dest_keybase=/run/user/1001/keybase/kbfs/public/cvc/ctlos_repo/
+
 rm ctlos_repo*
 
 # repo-add -s -v -n -R ctlos_repo.db.tar.gz *.pkg.tar.xz
@@ -10,6 +14,17 @@ cp -f ctlos_repo.db.tar.gz ctlos_repo.db
 ##optional-remove for old repo.db##
 # rm *gz.old{,.sig}
 
-rsync -auvC -L -P --delete-excluded --delete /media/files/github/ctlos/ctlos_repo/x86_64 creio@storage.osdn.net:/storage/groups/c/ct/ctlos/ctlos_repo/
+if [ "$1" = "-o" ]; then
+  rsync -auvCLP --delete-excluded --delete "$local_repo" "$dest_osdn"
+elif [ "$1" = "-k" ]; then
+  systemctl start --user kbfs
+  rsync -auvCLP --delete-excluded --delete "$local_repo" "$dest_keybase"
+elif [ "$1" = "-all" ]; then
+  rsync -auvCLP --delete-excluded --delete "$local_repo" "$dest_osdn"
+  systemctl start --user kbfs
+  rsync -auvCLP --delete-excluded --delete "$local_repo" "$dest_keybase"
+else
+  echo "No rsync repo"
+fi
 
 echo "Repo Up"
