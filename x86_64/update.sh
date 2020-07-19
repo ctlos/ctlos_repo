@@ -4,17 +4,16 @@ local_repo=/media/files/github/ctlos/ctlos_repo/x86_64
 dest_osdn=creio@storage.osdn.net:/storage/groups/c/ct/ctlos/ctlos_repo/
 dest_keybase=/run/user/1001/keybase/kbfs/public/cvc/ctlos_repo/
 
-rm ctlos_repo*
-
-# repo-add -s -v -n -R ctlos_repo.db.tar.gz *.pkg.tar.xz
-repo-add -n -R ctlos_repo.db.tar.gz *.pkg.tar.{xz,zst}
-
-rm ctlos_repo.db
-cp -f ctlos_repo.db.tar.gz ctlos_repo.db
-##optional-remove for old repo.db##
-# rm *gz.old{,.sig}
-
-if [ "$1" = "-o" ]; then
+if [ "$1" = "-add" ]; then
+  # repo-add -s -v -n -R ctlos_repo.db.tar.gz *.pkg.tar.xz
+  repo-add -n -R ctlos_repo.db.tar.gz *.pkg.tar.{xz,zst}
+  rm ctlos_repo.db
+  cp -f ctlos_repo.db.tar.gz ctlos_repo.db
+  ##optional-remove for old repo.db##
+  # rm *gz.old{,.sig}
+elif [ "$1" = "-clean" ]; then
+  rm ctlos_repo*
+elif [ "$1" = "-o" ]; then
   rsync -auvCLP --delete-excluded --delete "$local_repo" "$dest_osdn"
 elif [ "$1" = "-k" ]; then
   systemctl start --user kbfs
