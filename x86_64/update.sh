@@ -24,7 +24,7 @@ elif [ "$1" = "-k" ]; then
 echo "rsync keybase repo"
 elif [ "$1" = "-all" ]; then
   rsync -auvCLP --delete-excluded --delete "$local_repo" "$dest_osdn"
-  systemctl start --user kbfs
+  systemctl start --user kbfs && \
   rsync -auvCLP --delete-excluded --delete "$local_repo" "$dest_keybase"
 echo "rsync all repo"
 else
