@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# apindex .
+# ./update.sh -add
+# systemctl start --user kbfs
+# ./update.sh -all
+# surge --project ../ --domain https://ctlos.surge.sh
+# https://cvc.keybase.pub/ctlos_repo/x86_64
+
 local_repo=/media/files/github/ctlos/ctlos_repo/
 dest_osdn=creio@storage.osdn.net:/storage/groups/c/ct/ctlos/ctlos_repo/
 dest_keybase=/run/user/1001/keybase/kbfs/public/cvc/ctlos_repo/
@@ -22,9 +29,9 @@ elif [ "$1" = "-k" ]; then
   systemctl start --user kbfs
   rsync -auvCLP --delete-excluded --delete --exclude={"build",".git*",".*ignore"} "$local_repo" "$dest_keybase"
 echo "rsync keybase repo"
+# systemctl start --user kbfs
 elif [ "$1" = "-all" ]; then
   rsync -auvCLP --delete-excluded --delete "$local_repo"x86_64 "$dest_osdn"
-  systemctl start --user kbfs && \
   rsync -auvCLP --delete-excluded --delete --exclude={"build",".git*",".*ignore"} "$local_repo" "$dest_keybase"
 echo "rsync all repo"
 else
