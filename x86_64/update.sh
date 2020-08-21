@@ -2,10 +2,14 @@
 
 # apindex .
 # ./update.sh -add
-# systemctl start --user kbfs
+# systemctl --user start kbfs
 # ./update.sh -all
 # surge --project ../ --domain https://ctlos.surge.sh
+
+# https://osdn.net/projects/ctlos/storage/ctlos_repo/x86_64/
+# https://github.com/ctlos/ctlos_repo/tree/master/x86_64
 # https://cvc.keybase.pub/ctlos_repo/x86_64
+# https://ctlos.surge.sh
 
 local_repo=/media/files/github/ctlos/ctlos_repo/
 dest_osdn=creio@storage.osdn.net:/storage/groups/c/ct/ctlos/ctlos_repo/
@@ -26,10 +30,10 @@ elif [ "$1" = "-o" ]; then
   rsync -auvCLP --delete-excluded --delete "$local_repo"x86_64 "$dest_osdn"
 echo "rsync osdn repo"
 elif [ "$1" = "-k" ]; then
-  systemctl start --user kbfs
+  # systemctl --user start kbfs
   rsync -auvCLP --delete-excluded --delete --exclude={"build",".git*",".*ignore"} "$local_repo" "$dest_keybase"
 echo "rsync keybase repo"
-# systemctl start --user kbfs
+# systemctl --user start kbfs
 elif [ "$1" = "-all" ]; then
   rsync -auvCLP --delete-excluded --delete "$local_repo"x86_64 "$dest_osdn"
   rsync -auvCLP --delete-excluded --delete --exclude={"build",".git*",".*ignore"} "$local_repo" "$dest_keybase"
