@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# find ./ -type f -exec gpg --detach-sign {} \;
+# rm index.html.sig
+
 # apindex .
 # ./update.sh -add
 # systemctl --user start kbfs
