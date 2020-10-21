@@ -16,7 +16,7 @@
 
 local_repo=/media/files/github/ctlos/ctlos_repo/
 dest_osdn=creio@storage.osdn.net:/storage/groups/c/ct/ctlos/ctlos_repo/
-dest_keybase=/run/user/1001/keybase/kbfs/public/cvc/ctlos_repo/
+dest_keybase=/run/user/1000/keybase/kbfs/public/cvc/ctlos_repo/
 
 if [ "$1" = "-add" ]; then
   # repo-add -s -v -n -R ctlos_repo.db.tar.gz *.pkg.tar.xz
