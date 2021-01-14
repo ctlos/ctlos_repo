@@ -21,8 +21,9 @@ dest_keybase=/run/user/1000/keybase/kbfs/public/cvc/ctlos_repo/
 if [ "$1" = "-add" ]; then
   # repo-add -s -v -n -R ctlos_repo.db.tar.gz *.pkg.tar.xz
   repo-add -n -R ctlos_repo.db.tar.gz *.pkg.tar.{xz,zst}
-  rm ctlos_repo.db
+  rm ctlos_repo.{db,files}
   cp -f ctlos_repo.db.tar.gz ctlos_repo.db
+  cp -f ctlos_repo.files.tar.gz ctlos_repo.files
   ##optional-remove for old repo.db##
   # rm *gz.old{,.sig}
 echo "Repo Up"
