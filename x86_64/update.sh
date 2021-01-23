@@ -1,7 +1,9 @@
 #!/bin/bash
 
-# find ./ -type f -exec gpg --detach-sign {} \;
-# rm index.html.sig
+# rsync -cauv --delete --info=stats2 --exclude={"caur.files","*.files.tar*","caur.db","*.db.tar*"} /var/cache/pacman/caur/ /home/cretm/app/dev.ctlos.ru/ctlos-aur
+
+# find './' -maxdepth 1 -type f -regex '.*\.\(zst\|xz\)' -exec gpg -b '{}' \;
+# find './' -type f -exec gpg --pinentry-mode loopback --passphrase=${GPG_PASS} -b '{}' \;
 
 # apindex .
 # ./update.sh -add
@@ -31,16 +33,16 @@ elif [ "$1" = "-clean" ]; then
   rm ctlos_repo*
 echo "Repo clean"
 elif [ "$1" = "-o" ]; then
-  rsync -auvCLP --delete-excluded --delete "$local_repo"x86_64 "$dest_osdn"
+  rsync -cauvCLP --delete-excluded --delete "$local_repo"x86_64 "$dest_osdn"
 echo "rsync osdn repo"
 elif [ "$1" = "-k" ]; then
   # systemctl --user start kbfs
-  rsync -auvCLP --delete-excluded --delete --exclude={"build",".git*",".*ignore"} "$local_repo"x86_64/ "$dest_keybase"
+  rsync -cauvCLP --delete-excluded --delete --exclude={"build",".git*",".*ignore"} "$local_repo"x86_64/ "$dest_keybase"
 echo "rsync keybase repo"
 # systemctl --user start kbfs
 elif [ "$1" = "-all" ]; then
-  rsync -auvCLP --delete-excluded --delete "$local_repo"x86_64 "$dest_osdn"
-  rsync -auvCLP --delete-excluded --delete --exclude={"build",".git*",".*ignore"} "$local_repo"x86_64/ "$dest_keybase"
+  rsync -cauvCLP --delete-excluded --delete "$local_repo"x86_64 "$dest_osdn"
+  rsync -cauvCLP --delete-excluded --delete --exclude={"build",".git*",".*ignore"} "$local_repo"x86_64/ "$dest_keybase"
 echo "rsync all repo"
 else
   echo "No rsync repo"
