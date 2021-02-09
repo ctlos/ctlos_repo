@@ -26,6 +26,7 @@ if [ "$1" = "-add" ]; then
   rm ctlos_repo.{db,files}
   cp -f ctlos_repo.db.tar.gz ctlos_repo.db
   cp -f ctlos_repo.files.tar.gz ctlos_repo.files
+  apindex .
   ##optional-remove for old repo.db##
   # rm *gz.old{,.sig}
 echo "Repo Up"
