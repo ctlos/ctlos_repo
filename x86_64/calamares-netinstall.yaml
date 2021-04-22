@@ -1,0 +1,784 @@
+- name: "Default Archiso"
+  description: "Default group"
+  critical: false
+  hidden: false
+  selected: true
+  packages:
+    - base-devel
+    - amd-ucode
+    - intel-ucode
+    - arch-install-scripts
+    - bind-tools
+    - gpm
+    - man-db
+    - man-pages
+    - mdadm
+    - systemd-resolvconf
+    - usb_modeswitch
+
+- name: "Kernel"
+  description: "Install Kernel"
+  critical: true
+  hidden: false
+  selected: false
+  expanded: true
+  subgroups:
+  - name: "Linux"
+    description: "Install linux kernel"
+    selected: true
+    packages:
+      - name: linux
+        description: Ванильное ядро Arch Linux
+      - name: linux-headers
+        description: Заголовки и скрипты для сборки модулей ядра Linux
+      - name: linux-firmware
+        description: Файлы прошивки для ядра Linux
+      - name: linux-atm
+        description: Драйверы для поддержки сети ATM(банкоматов) под Linux
+  - name: "Linux-lts"
+    description: "Install linux-lts kernel"
+    selected: false
+    packages:
+      - linux-lts
+      - linux-lts-headers
+  - name: "Linux-zen"
+    description: "Install linux-zen kernel"
+    selected: false
+    packages:
+      - linux-zen
+      - linux-zen-headers
+  - name: "Linux-hardened"
+    description: "Install linux-hardened kernel"
+    selected: false
+    packages:
+      - linux-hardened
+      - linux-hardened-headers
+
+- name: "Xorg, Video Drivers"
+  critical: false
+  hidden: false
+  selected: true
+  subgroups:
+  - name: "Xorg"
+    description: "xorg Apps, server"
+    selected: true
+    packages:
+      - xorg-apps
+      - xorg-fonts
+      - xorg-server
+      - xorg-server-common
+      - xorg-xinit
+      - xorg-xkill
+      - xorg-xrdb
+      - xorg-xinput
+  - name: "Xorg video Drivers"
+    selected: true
+    packages:
+      - xf86-video-intel
+      - xf86-video-amdgpu
+      - xf86-video-ati
+      - xf86-video-nouveau
+      - xf86-video-fbdev
+      - xf86-video-dummy
+      - xf86-video-vesa
+      - xf86-video-openchrome
+      - xf86-video-sisusb
+      - xf86-video-vmware
+      - xf86-video-voodoo
+  - name: "Video Acceleration"
+    selected: true
+    packages:
+      - mesa
+      - mesa-vdpau
+      - intel-tbb
+      - libva
+      - libva-mesa-driver
+      - libva-intel-driver
+      - libva-vdpau-driver
+  - name: "Xorg input Drivers"
+    selected: true
+    packages:
+      - xf86-input-libinput
+      - xf86-input-elographics
+      - xf86-input-evdev
+      - xf86-input-void
+      - xf86-input-vmmouse
+
+- name: "File Systems"
+  description: "Drivers & tools"
+  critical: false
+  hidden: false
+  selected: true
+  packages:
+    - os-prober
+    - edk2-shell
+    - efibootmgr
+    - gptfdisk
+    - ntfs-3g
+    - btrfs-progs
+    - f2fs-tools
+    - reiserfsprogs
+    - exfatprogs
+    - xfsprogs
+    - clonezilla
+    - dosfstools
+    - fsarchiver
+    - hdparm
+    - smartmontools
+    - testdisk
+    - nfs-utils
+    - nilfs-utils
+    - gvfs
+    - gvfs-afc
+    - gvfs-goa
+    - gvfs-google
+    - gvfs-gphoto2
+    - gvfs-mtp
+    - gvfs-nfs
+    - gvfs-smb
+    - mtpfs
+    - gzip
+    - p7zip
+    - unzip
+    - unrar
+
+- name: "Network"
+  description: "Drivers"
+  critical: false
+  hidden: false
+  selected: true
+  packages:
+    - tcpdump
+    - nmap
+    - b43-fwcutter
+    - broadcom-wl
+    - openssh
+    - openvpn
+    - vpnc
+    - dhcpcd
+    - wpa_supplicant
+    - dialog
+    - net-tools
+    - networkmanager
+    - networkmanager-openconnect
+    - networkmanager-openvpn
+    - networkmanager-pptp
+    - networkmanager-vpnc
+    - networkmanager-l2tp
+    - mobile-broadband-provider-info
+    - modemmanager
+    - geoip
+    - blueman
+
+- name: "Audio"
+  description: "Drivers"
+  critical: false
+  hidden: false
+  selected: true
+  packages:
+    - alsa-firmware
+    - alsa-utils
+    - gstreamer
+    - gstreamer-vaapi
+    - gst-libav
+    - gst-plugins-bad
+    - gst-plugins-base
+    - gst-plugins-good
+    - gst-plugins-ugly
+    - pulseaudio
+    - pulseaudio-alsa
+    - pulseaudio-bluetooth
+    - pulseaudio-equalizer
+    - lib32-alsa-plugins
+    - libcdio
+    - libdvdread
+    - libdvdnav
+
+- name: "Ctlos repo pkg"
+  critical: false
+  hidden: true
+  selected: true
+  packages:
+    - ctlos-keyring
+    - ctlos-mirrorlist
+
+- name: "Ctlos depends"
+  description: "Utils & ctlos depends"
+  critical: false
+  hidden: false
+  selected: true
+  subgroups:
+  - name: "Ctlos pkgs"
+    critical: false
+    hidden: false
+    selected: true
+    packages:
+      - base-skel
+      - ctlos-welcome
+      - ctlos-helper
+      - ctlos-wall
+  - name: "Gtk engines"
+    critical: false
+    hidden: false
+    selected: true
+    expanded: true
+    packages:
+      - gtk-engines
+      - gtk-engine-murrine
+      - xdg-user-dirs-gtk
+  - name: "Qt"
+    critical: false
+    hidden: false
+    selected: true
+    packages:
+      - qt5ct
+      - qt5-styleplugins
+      - qgnomeplatform
+  - name: "Themes"
+    critical: false
+    hidden: false
+    selected: true
+    packages:
+      - arc-gtk-theme
+      - ctlos-qogir
+  - name: "Icons & Cursors"
+    critical: false
+    hidden: false
+    selected: true
+    packages:
+      - papirus-icon-theme
+      - qogir-icon-theme-git
+      - capitaine-cursors
+  - name: "Fonts"
+    critical: false
+    hidden: false
+    selected: true
+    packages:
+      - ttf-font-awesome
+      - ttf-dejavu
+      - ttf-opensans
+      - ttf-ubuntu-font-family
+      - ttf-roboto
+      - ttf-roboto-mono
+      - ttf-clear-sans
+      - nerd-fonts-hack
+      - otb-uw_ttyp0
+      - noto-fonts-cjk
+      - noto-fonts-emoji
+  - name: "Ctlos cli depends"
+    critical: false
+    hidden: false
+    selected: true
+    packages:
+      - gnome-keyring
+      - yay-bin
+      - inxi
+      - fzf-extras
+      - neofetch
+      - bash-completion
+      - syntax-highlighting
+      - oh-my-zsh-git
+      - zsh-autosuggestions
+      - zsh-fast-syntax-highlighting-git
+      - cava
+      - gotop-bin
+      - tmux
+      - htop
+      - scrot
+      - mc
+      - ranger
+      - rofi
+      - mpd
+      - mpc
+      - ncmpcpp
+      - newsboat
+      - git
+      - wget
+      - xsel
+      - numlockx
+      - wmctrl
+      - mediainfo
+      - ffmpeg
+      - ffmpegthumbnailer
+      - ffmpegthumbs
+      - ripgrep
+      - cronie
+      - chrpath
+      - expac
+      - gtk2-perl
+      - perl-file-desktopentry
+      - intltool
+      - pv
+      - imagemagick
+      - w3m
+      - slop
+      - youtube-dl
+      - tor
+      - privoxy
+      - xdotool
+      - yad
+      - unclutter
+  - name: "Ctlos gui depends"
+    critical: false
+    hidden: false
+    selected: true
+    packages:
+      - timeshift
+      - pamac-aur
+      - gparted
+      - firefox
+      - firefox-i18n-ru
+      - firefox-ublock-origin
+      - mpv
+      - smplayer
+      - smplayer-skins
+      - smplayer-themes
+      - simplescreenrecorder
+      - audacious
+      - gufw
+      - keepassxc
+      - veracrypt
+      - telegram-desktop
+      - flameshot
+      - skippy-xd-git
+      - multilockscreen-git
+
+- name: "Dm"
+  description: "Login manager"
+  critical: false
+  hidden: false
+  selected: true
+  subgroups:
+  - name: "Sddm"
+    description: "qt display manager"
+    critical: false
+    hidden: false
+    selected: true
+    packages:
+      - sddm
+      - qt5-svg
+      - qt5-quickcontrols2
+      - qt5-graphicaleffects
+      - ctlos-sddm-themes
+  - name: "Lightdm"
+    description: "display manager"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - lightdm
+      - lightdm-gtk-greeter
+
+- name: "Desktop environment"
+  description: "Install Desktop environment"
+  critical: false
+  hidden: false
+  selected: false
+  expanded: true
+  subgroups:
+  - name: "Xfce"
+    description: "Desktop environment"
+    critical: false
+    hidden: false
+    selected: true
+    expanded: true
+    packages:
+      - xfce-skel
+      - polkit-gnome
+      - network-manager-applet
+      - xfce4-appfinder
+      - xfce4-battery-plugin
+      - xfce4-notifyd
+      - xfce4-panel
+      - xfce4-power-manager
+      - xfce4-pulseaudio-plugin
+      - xfce4-session
+      - xfce4-settings
+      - xfce4-terminal
+      - xfce4-whiskermenu-plugin
+      - xfce4-xkb-plugin
+      - xfce4-mpc-plugin
+      - xfce4-clipman-plugin
+      - xfce4-netload-plugin
+      - xfconf
+      - xfdesktop
+      - xfwm4
+      - thunar
+      - thunar-archive-plugin
+      - thunar-media-tags-plugin
+      - thunar-volman
+      - tumbler
+      - alacarte
+      - catfish
+      - galculator
+      - file-roller
+      - leafpad
+      - pavucontrol
+      - viewnior
+      - djvulibre
+      - xreader
+      - gnome-multi-writer
+      - xfce4-windowck-plugin
+      - xfce4-docklike-plugin-git
+  - name: "Openbox"
+    description: "Window manager"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - openbox-skel
+      - polkit-gnome
+      - network-manager-applet
+      - galculator
+      - gxkb
+      - gsimplecal
+      - jgmenu
+      - lxmenu-data
+      - lxappearance
+      - nitrogen
+      - obconf
+      - lxrandr
+      - thunar
+      - thunar-archive-plugin
+      - thunar-media-tags-plugin
+      - thunar-volman
+      - tumbler
+      - xfce4-power-manager
+      - xfce4-terminal
+      - file-roller
+      - flameshot
+      - leafpad
+      - pavucontrol
+      - viewnior
+      - xreader
+      - djvulibre
+      - parcellite
+      - picom
+      - redshift
+      - dunst
+      - xsettingsd
+      - udisks2
+      - udiskie
+      - volumeicon
+      - alttab-git
+      - obkey-git
+      - skippy-xd-git
+      - tint2-git
+      - jsoncpp
+      - polybar-git
+      - multilockscreen-git
+  - name: "Xfwm4"
+    description: "Window manager xfce"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - xfwm-skel
+      - polkit-gnome
+      - network-manager-applet
+      - xfce4-power-manager
+      - xfce4-settings
+      - xfwm4
+      - sxhkd
+      - picom
+      - redshift
+      - dunst
+      - udisks2
+      - udiskie
+      - ueberzug
+      - gsimplecal
+      - nitrogen
+      - thunar
+      - thunar-archive-plugin
+      - thunar-media-tags-plugin
+      - thunar-volman
+      - tumbler
+      - flameshot
+      - leafpad
+      - pavucontrol
+      - viewnior
+      - xreader
+      - djvulibre
+      - parcellite
+      - wmname
+      - micro-bin
+      - multilockscreen-git
+      - tint2-git
+      - polybar-git
+      - jsoncpp
+      - rxvt-unicode-patched
+      - urxvt-perls
+  - name: "Bspwm"
+    description: "Tiling window manager"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - bspwm-skel
+      - polkit-gnome
+      - galculator
+      - network-manager-applet
+      - bspwm
+      - sxhkd
+      - picom
+      - redshift
+      - dunst
+      - xfce4-power-manager
+      - xsettingsd
+      - udisks2
+      - udiskie
+      - ueberzug
+      - gsimplecal
+      - lxappearance
+      - lxrandr
+      - nitrogen
+      - thunar
+      - thunar-archive-plugin
+      - thunar-media-tags-plugin
+      - thunar-volman
+      - tumbler
+      - flameshot
+      - leafpad
+      - pavucontrol
+      - viewnior
+      - xreader
+      - parcellite
+      - wmname
+      - micro-bin
+      - skippy-xd-git
+      - multilockscreen-git
+      - tint2-git
+      - polybar-git
+      - jsoncpp
+      - rxvt-unicode-patched
+      - urxvt-perls
+  - name: "I3 wm"
+    description: "Tiling window manager"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - i3-skel
+      - polkit-gnome
+      - network-manager-applet
+      - i3-gaps
+      - galculator
+      - gsimplecal
+      - lxappearance
+      - nitrogen
+      - lxrandr
+      - thunar
+      - thunar-archive-plugin
+      - thunar-media-tags-plugin
+      - thunar-volman
+      - tumbler
+      - xfce4-power-manager
+      - xfce4-terminal
+      - file-roller
+      - flameshot
+      - leafpad
+      - pavucontrol
+      - viewnior
+      - xreader
+      - djvulibre
+      - parcellite
+      - picom
+      - redshift
+      - dunst
+      - xsettingsd
+      - udisks2
+      - udiskie
+      - skippy-xd-git
+      - multilockscreen-git
+      - polybar-git
+      - jsoncpp
+  - name: "Franken wm"
+    description: "Tiling window manager"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - frankenwm-skel
+      - xcb-util-wm
+      - xcb-util-keysyms
+      - polkit-gnome
+      - galculator
+      - network-manager-applet
+      - picom
+      - redshift
+      - dunst
+      - xfce4-power-manager
+      - xsettingsd
+      - udisks2
+      - udiskie
+      - ueberzug
+      - gsimplecal
+      - lxappearance
+      - lxrandr
+      - nitrogen
+      - thunar
+      - thunar-archive-plugin
+      - thunar-media-tags-plugin
+      - thunar-volman
+      - tumbler
+      - flameshot
+      - leafpad
+      - pavucontrol
+      - viewnior
+      - xreader
+      - djvulibre
+      - parcellite
+      - wmname
+      - micro-bin
+      - multilockscreen-git
+      - tint2-git
+      - polybar-git
+      - jsoncpp
+      - rxvt-unicode-patched
+      - urxvt-perls
+      - sxhkd
+  - name: "Budgie"
+    description: "Desktop environment"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - budgie-desktop
+      - gnome-control-center
+      - gnome-backgrounds
+      - gnome-screensaver
+      - gnome-terminal
+      - nautilus-sendto
+      - gnome-nettool
+      - gnome-usage
+      - gnome-multi-writer
+      - dconf-editor
+      - network-manager-applet
+  - name: "GNOME"
+    description: "Desktop environment"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - gnome-shell
+      - gnome-control-center
+      - gnome-terminal
+      - gnome-tweaks
+      - nautilus-sendto
+      - gnome-nettool
+      - gnome-usage
+      - gnome-multi-writer
+      - dconf-editor
+      - chrome-gnome-shell
+      - gnome-software-packagekit-plugin
+      - gnome-packagekit
+      - fwupd
+  - name: "Lxqt"
+    description: "Desktop environment"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - lxqt
+      - xdg-utils
+      - libpulse
+      - libstatgrab
+      - libsysstat
+      - network-manager-applet
+      - oxygen-icons
+      - breeze
+      - breeze-gtk
+      - pavucontrol-qt
+  - name: "Cinnamon"
+    description: "Desktop environment"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - cinnamon
+      - cinnamon-translations
+      - gnome-terminal
+      - gnome-system-monitor
+      - gpicview-gtk3
+      - x-apps
+      - nemo-fileroller
+      - nemo-image-converter
+      - nemo-preview
+      - nemo-seahorse
+      - nemo-share
+      - blueberry
+  - name: "Mate"
+    description: "Desktop environment"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - mate
+      - mate-extra
+      - network-manager-applet
+  - name: "Deepin"
+    description: "Desktop environment"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - deepin
+      - deepin-extra
+      - file-roller
+  - name: "KDE Plasma"
+    description: "Desktop environment"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - plasma
+      - packagekit-qt5
+      - kdeconnect
+      - fwupd
+      - python-dbus
+      - kdebase-meta
+      - gwenview
+      - ark
+      - okular
+
+- name: "Ctlos system pkg"
+  critical: false
+  hidden: true
+  selected: true
+  packages:
+    - ctlos-system
+
+- name: "Virtualbox"
+  description: "Install virtualbox"
+  critical: false
+  hidden: false
+  selected: false
+  packages:
+    - virtualbox
+    - virtualbox-host-modules-arch
+    - virtualbox-host-dkms
+    - virtualbox-guest-dkms
+    - virtualbox-guest-utils
+    - virtualbox-guest-iso
+
+- name: "Printing"
+  description: "Support for printing (Cups)"
+  critical: false
+  hidden: false
+  selected: false
+  packages:
+    - cups
+    - cups-filters
+    - cups-pdf
+    - ghostscript
+    - gsfonts
+    - foomatic-db
+    - foomatic-db-engine
+    - foomatic-db-ppds
+    - foomatic-db-nonfree
+    - foomatic-db-nonfree-ppds
+    - gutenprint
+    - foomatic-db-gutenprint-ppds
+    - system-config-printer
+    - hplip
+    - splix
