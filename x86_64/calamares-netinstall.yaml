@@ -732,14 +732,16 @@
     selected: false
     packages:
       - plasma
+      - kde-system-meta
       - packagekit-qt5
+      - konsole
+      - dolphin
       - kdeconnect
-      - fwupd
-      - python-dbus
-      - kdebase-meta
-      - gwenview
       - ark
+      - gwenview
       - okular
+      - python-dbus
+      - fwupd
 
 - name: "Ctlos system pkg"
   critical: false
