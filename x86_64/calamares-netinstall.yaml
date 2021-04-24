@@ -731,7 +731,7 @@
     hidden: false
     selected: false
     packages:
-      - plasma
+      - plasma-meta
       - kde-system-meta
       - packagekit-qt5
       - konsole
