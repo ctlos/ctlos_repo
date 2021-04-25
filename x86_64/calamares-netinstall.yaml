@@ -733,14 +733,20 @@
     packages:
       - plasma-meta
       - kde-system-meta
+      - plasma-wayland-session
+      - egl-wayland
+      - plasma-desktop
+      - kde-utilities-meta
+      - plasma-pa
       - packagekit-qt5
       - konsole
       - dolphin
-      - kdeconnect
       - ark
+      - kate
+      - kwalletmanager
+      - kdeconnect
+      - latte-dock
       - gwenview
-      - okular
-      - python-dbus
       - fwupd
 
 - name: "Ctlos system pkg"
