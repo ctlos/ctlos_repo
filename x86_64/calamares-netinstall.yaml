@@ -13,8 +13,15 @@
     - man-db
     - man-pages
     - mdadm
+    - memtest86+
+    - logrotate
+    - s-nail
     - systemd-resolvconf
     - usb_modeswitch
+    - usbutils
+    - lsscsi
+    - sdparm
+    - sg3_utils
 
 - name: "Kernel"
   description: "Install Kernel"
@@ -115,11 +122,15 @@
     - efibootmgr
     - gptfdisk
     - ntfs-3g
+    - cryptsetup
+    - device-mapper
     - btrfs-progs
     - f2fs-tools
     - reiserfsprogs
     - exfatprogs
     - xfsprogs
+    - jfsutils
+    - sysfsutils
     - clonezilla
     - dosfstools
     - fsarchiver
@@ -148,6 +159,7 @@
   hidden: false
   selected: true
   packages:
+    - r8168
     - tcpdump
     - nmap
     - b43-fwcutter
@@ -339,9 +351,6 @@
       - keepassxc
       - veracrypt
       - telegram-desktop
-      - flameshot
-      - skippy-xd-git
-      - multilockscreen-git
 
 - name: "Dm"
   description: "Login manager"
@@ -360,14 +369,6 @@
       - qt5-quickcontrols2
       - qt5-graphicaleffects
       - ctlos-sddm-themes
-  - name: "Lightdm"
-    description: "display manager"
-    critical: false
-    hidden: false
-    selected: false
-    packages:
-      - lightdm
-      - lightdm-gtk-greeter
 
 - name: "Desktop environment"
   description: "Install Desktop environment"
@@ -412,6 +413,7 @@
       - catfish
       - galculator
       - file-roller
+      - flameshot
       - leafpad
       - pavucontrol
       - viewnior
@@ -420,6 +422,8 @@
       - gnome-multi-writer
       - xfce4-windowck-plugin
       - xfce4-docklike-plugin-git
+      - multilockscreen-git
+      - skippy-xd-git
   - name: "Openbox"
     description: "Window manager"
     critical: false
@@ -467,6 +471,7 @@
       - jsoncpp
       - polybar-git
       - multilockscreen-git
+      - skippy-xd-git
   - name: "Xfwm4"
     description: "Window manager xfce"
     critical: false
@@ -503,6 +508,7 @@
       - wmname
       - micro-bin
       - multilockscreen-git
+      - skippy-xd-git
       - tint2-git
       - polybar-git
       - jsoncpp
@@ -670,8 +676,6 @@
       - gnome-multi-writer
       - dconf-editor
       - chrome-gnome-shell
-      - gnome-software-packagekit-plugin
-      - gnome-packagekit
       - fwupd
   - name: "Lxqt"
     description: "Desktop environment"
@@ -706,7 +710,6 @@
       - nemo-preview
       - nemo-seahorse
       - nemo-share
-      - blueberry
   - name: "Mate"
     description: "Desktop environment"
     critical: false
