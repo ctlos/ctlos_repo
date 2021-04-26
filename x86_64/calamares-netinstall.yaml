@@ -78,6 +78,7 @@
       - xorg-xkill
       - xorg-xrdb
       - xorg-xinput
+      - xorg-xrandr
   - name: "Xorg video Drivers"
     selected: true
     packages:
@@ -285,6 +286,7 @@
       - gnome-keyring
       - yay-bin
       - inxi
+      - tldr
       - fzf-extras
       - neofetch
       - bash-completion
