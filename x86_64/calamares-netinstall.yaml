@@ -160,7 +160,6 @@
   hidden: false
   selected: true
   packages:
-    - r8168
     - tcpdump
     - nmap
     - b43-fwcutter
