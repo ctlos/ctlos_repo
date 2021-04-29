@@ -751,6 +751,7 @@
       - kdeconnect
       - latte-dock
       - gwenview
+      - flameshot
       - fwupd
 
 - name: "Ctlos system pkg"
