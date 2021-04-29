@@ -507,7 +507,7 @@
       - djvulibre
       - parcellite
       - wmname
-      - micro-bin
+      - micro
       - multilockscreen-git
       - skippy-xd-git
       - tint2-git
@@ -551,7 +551,7 @@
       - xreader
       - parcellite
       - wmname
-      - micro-bin
+      - micro
       - skippy-xd-git
       - multilockscreen-git
       - tint2-git
@@ -636,7 +636,7 @@
       - djvulibre
       - parcellite
       - wmname
-      - micro-bin
+      - micro
       - multilockscreen-git
       - tint2-git
       - polybar-git
@@ -743,6 +743,7 @@
       - kde-utilities-meta
       - plasma-pa
       - packagekit-qt5
+      - kvantum-qt5
       - konsole
       - dolphin
       - ark
