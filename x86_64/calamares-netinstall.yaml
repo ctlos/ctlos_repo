@@ -283,7 +283,7 @@
     selected: true
     packages:
       - gnome-keyring
-      - yay-bin
+      - yay
       - inxi
       - tldr
       - fzf-extras
