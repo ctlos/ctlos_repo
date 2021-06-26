@@ -513,7 +513,7 @@
       - tint2-git
       - polybar-git
       - jsoncpp
-      - rxvt-unicode-patched
+      - rxvt-unicode
       - urxvt-perls
   - name: "Bspwm"
     description: "Tiling window manager"
@@ -557,7 +557,7 @@
       - tint2-git
       - polybar-git
       - jsoncpp
-      - rxvt-unicode-patched
+      - rxvt-unicode
       - urxvt-perls
   - name: "I3 wm"
     description: "Tiling window manager"
@@ -641,7 +641,7 @@
       - tint2-git
       - polybar-git
       - jsoncpp
-      - rxvt-unicode-patched
+      - rxvt-unicode
       - urxvt-perls
       - sxhkd
   - name: "Budgie"
