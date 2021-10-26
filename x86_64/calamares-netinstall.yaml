@@ -79,6 +79,7 @@
       - xorg-xrdb
       - xorg-xinput
       - xorg-xrandr
+      - xorg-xhost
   - name: "Xorg video Drivers"
     selected: true
     packages:
@@ -180,7 +181,7 @@
     - mobile-broadband-provider-info
     - modemmanager
     - geoip
-    - blueman
+    - bluez-utils
 
 - name: "Audio"
   description: "Drivers"
@@ -296,6 +297,7 @@
       - cava
       - gotop-bin
       - tmux
+      - sysstat
       - htop
       - scrot
       - mc
@@ -305,6 +307,7 @@
       - mpc
       - ncmpcpp
       - newsboat
+      - micro
       - git
       - wget
       - xsel
@@ -313,7 +316,6 @@
       - mediainfo
       - ffmpeg
       - ffmpegthumbnailer
-      - ffmpegthumbs
       - ripgrep
       - cronie
       - chrpath
@@ -331,6 +333,7 @@
       - xdotool
       - yad
       - unclutter
+      - jq
   - name: "Ctlos gui depends"
     critical: false
     hidden: false
@@ -644,6 +647,47 @@
       - rxvt-unicode
       - urxvt-perls
       - sxhkd
+  - name: "Sway wm"
+    description: "Tiling window manager wayland"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - xorg-xhost
+      - kitty
+      - polkit-gnome
+      - boost-libs
+      - sway
+      - swayidle
+      - swaylock
+      - swaybg
+      - waybar
+      - grim
+      - slurp
+      - mako
+      - gtk-layer-shell
+      - egl-wayland
+      - wayland-protocols
+      - wl-clipboard
+      - wofi
+      - xdg-desktop-portal-wlr
+      - xorg-xwayland
+      - acpi
+      - brightnessctl
+      - lxappearance
+      - network-manager-applet
+      - pavucontrol
+      - pamixer
+      - dex
+      - imv
+      - thunar
+      - thunar-archive-plugin
+      - thunar-media-tags-plugin
+      - thunar-volman
+      - tumbler
+      - galculator
+      - file-roller
+      - leafpad
   - name: "Budgie"
     description: "Desktop environment"
     critical: false
@@ -748,6 +792,7 @@
       - dolphin
       - ark
       - kate
+      - ffmpegthumbs
       - kwalletmanager
       - kdeconnect
       - latte-dock
