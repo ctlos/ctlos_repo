@@ -79,7 +79,6 @@
       - xorg-xrdb
       - xorg-xinput
       - xorg-xrandr
-      - xorg-xhost
   - name: "Xorg video Drivers"
     selected: true
     packages:
@@ -510,7 +509,6 @@
       - djvulibre
       - parcellite
       - wmname
-      - micro
       - multilockscreen-git
       - skippy-xd-git
       - tint2-git
@@ -554,7 +552,6 @@
       - xreader
       - parcellite
       - wmname
-      - micro
       - skippy-xd-git
       - multilockscreen-git
       - tint2-git
@@ -639,7 +636,6 @@
       - djvulibre
       - parcellite
       - wmname
-      - micro
       - multilockscreen-git
       - tint2-git
       - polybar-git
@@ -653,6 +649,7 @@
     hidden: false
     selected: false
     packages:
+      - sway-skel
       - xorg-xhost
       - kitty
       - polkit-gnome
