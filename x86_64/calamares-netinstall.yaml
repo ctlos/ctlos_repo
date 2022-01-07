@@ -339,6 +339,7 @@
     selected: true
     packages:
       - timeshift
+      - archlinux-appstream-data-pamac
       - pamac-aur
       - gparted
       - firefox
