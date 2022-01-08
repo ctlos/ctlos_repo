@@ -93,6 +93,12 @@
       - xf86-video-sisusb
       - xf86-video-vmware
       - xf86-video-voodoo
+  - name: "Nvidia video Drivers"
+    selected: false
+    packages:
+      - nvidia-dkms
+      - nvidia-settings
+      - nvidia-utils
   - name: "Video Acceleration"
     selected: true
     packages:
