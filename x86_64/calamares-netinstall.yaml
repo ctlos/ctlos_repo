@@ -96,6 +96,8 @@
   - name: "Nvidia video Drivers"
     selected: false
     packages:
+      - nvidia
+      - nvidia-lts
       - nvidia-dkms
       - nvidia-settings
       - nvidia-utils
