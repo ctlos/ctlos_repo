@@ -724,6 +724,8 @@
       - firefox-extension-gnome-shell-integration
       - gnome-shell-extension-just-perfection-desktop-git
       - gnome-control-center
+      - gnome-themes-extra
+      - gnome-menus
       - gnome-terminal
       - tilix
       - gnome-tweaks
