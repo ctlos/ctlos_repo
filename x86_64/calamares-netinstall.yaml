@@ -717,16 +717,28 @@
     hidden: false
     selected: false
     packages:
+      - gnome-skel
       - gnome-shell
+      - gnome-shell-extensions
+      - chrome-gnome-shell
+      - firefox-extension-gnome-shell-integration
       - gnome-control-center
       - gnome-terminal
+      - tilix
       - gnome-tweaks
+      - nautilus
       - nautilus-sendto
+      - seahorse-nautilus
+      - nautilus-image-converter
+      - nautilus-share
+      - python-nautilus
+      - gedit
+      - galculator
+      - file-roller
       - gnome-nettool
       - gnome-usage
       - gnome-multi-writer
       - dconf-editor
-      - chrome-gnome-shell
       - fwupd
   - name: "Lxqt"
     description: "Desktop environment"
