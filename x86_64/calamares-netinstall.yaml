@@ -340,6 +340,7 @@
       - xdotool
       - yad
       - unclutter
+      - ueberzug
       - jq
   - name: "Ctlos gui depends"
     critical: false
@@ -800,6 +801,7 @@
     hidden: false
     selected: false
     packages:
+      - plasma-skel
       - plasma-meta
       - kde-system-meta
       - plasma-wayland-session
@@ -819,6 +821,14 @@
       - latte-dock
       - gwenview
       - fwupd
+      - extra-cmake-modules
+      - libdbusmenu-glib
+      - libdbusmenu-gtk3
+      - libdbusmenu-gtk2
+      - libdbusmenu-qt5
+      - lib32-libdbusmenu-glib
+      - lib32-libdbusmenu-gtk2
+      - applet-window-buttons-git
 
 - name: "Ctlos system pkg"
   critical: false
