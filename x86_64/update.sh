@@ -16,14 +16,14 @@
 # https://cvc.keybase.pub/ctlos_repo
 
 local_repo=${PWD}
-dest_ctlos=cretm@cloud.ctlos.ru:/home/cretm/app/cloud.ctlos.ru/ctlos_repo/
-dest_osdn=creio@storage.osdn.net:/storage/groups/c/ct/ctlos/ctlos_repo/
-dest_keybase=/run/user/1000/keybase/kbfs/public/cvc/ctlos_repo/
 echo $local_repo
+repo_ctlos=cretm@cloud.ctlos.ru:/home/cretm/app/cloud.ctlos.ru/ctlos_repo/
+repo_osdn=creio@storage.osdn.net:/storage/groups/c/ct/ctlos/ctlos_repo/
+repo_keybase=/run/user/1000/keybase/kbfs/public/cvc/ctlos_repo/
 
 _keybase() {
   srv_keybase="$(systemctl status --user kbfs | grep -i running 2>/dev/null || echo '')"
-  rsync_keybase=$(rsync -cauvCLP --delete-excluded --delete --exclude={"build",".git*",".*ignore"} "$local_repo"/ "$dest_keybase")
+  rsync_keybase=$(rsync -cauvCLP --delete-excluded --delete --exclude={"build",".git*",".*ignore"} "$local_repo"/ "$repo_keybase")
   if [[ "$srv_keybase" ]]; then
     echo $rsync_keybase
   else
@@ -55,12 +55,12 @@ elif [ "$1" = "-clean" ]; then
   rm ctlos_repo*
   echo "Repo clean"
 elif [ "$1" = "-o" ]; then
-  rsync -cauvCLP --delete-excluded --delete "$local_repo" "$dest_osdn"
+  rsync -cauvCLP --delete-excluded --delete "$local_repo" "$repo_osdn"
   echo "rsync osdn repo"
 # systemctl --user start kbfs
 elif [ "$1" = "-sync" ]; then
   _keybase
-  rsync -cauvCLP --delete-excluded --delete "$local_repo" "$dest_osdn"
+  rsync -cauvCLP --delete-excluded --delete "$local_repo" "$repo_osdn"
   echo "rsync all repo"
 # systemctl --user start kbfs
 elif [ "$1" = "-k" ]; then
@@ -71,8 +71,8 @@ elif [ "$1" = "-all" ]; then
   cp -f ctlos_repo.db.tar.zst ctlos_repo.db
   cp -f ctlos_repo.files.tar.zst ctlos_repo.files
   _keybase
-  rsync -cauvCLP --delete-excluded --delete "$local_repo" "$dest_ctlos"
-  rsync -cauvCLP --delete-excluded --delete "$local_repo" "$dest_osdn"
+  rsync -cauvCLP --delete-excluded --delete "$local_repo" "$repo_ctlos"
+  rsync -cauvCLP --delete-excluded --delete "$local_repo" "$repo_osdn"
   echo "add pkg, rsync all repo"
 else
   repo-add -n -R ctlos_repo.db.tar.zst *.pkg.tar.zst
@@ -80,4 +80,16 @@ else
   cp -f ctlos_repo.db.tar.zst ctlos_repo.db
   cp -f ctlos_repo.files.tar.zst ctlos_repo.files
   echo "Done repo-add pkg"
+fi
+
+## sync ctlos-aur repo
+aur_ctlos=cretm@cloud.ctlos.ru:/home/cretm/app/cloud.ctlos.ru/ctlos-aur/
+aur_keybase=/run/user/1000/keybase/kbfs/public/cvc/ctlos-aur/
+
+if [ "$1" = "-aur" ]; then
+  srv_keybase="$(systemctl status --user kbfs | grep -i running 2>/dev/null || echo '')"
+  if [[ "$srv_keybase" ]]; then
+    rsync -cauvCLP --delete-excluded --delete "$aur_ctlos" "$aur_keybase"
+  fi
+  echo "sync aur"
 fi
