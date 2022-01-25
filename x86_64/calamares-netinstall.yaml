@@ -42,6 +42,7 @@
         description: Файлы прошивки для ядра Linux
       - name: linux-atm
         description: Драйверы для поддержки сети ATM(банкоматов) под Linux
+        selected: false
   - name: "Linux-lts"
     description: "Install linux-lts kernel"
     selected: false
@@ -127,8 +128,8 @@
   selected: true
   packages:
     - os-prober
-    - edk2-shell
     - efibootmgr
+    - edk2-shell
     - gptfdisk
     - ntfs-3g
     - cryptsetup
@@ -383,7 +384,7 @@
       - qt5-graphicaleffects
       - ctlos-sddm-themes
 
-- name: "Desktop environment"
+- name: "Desktop environment / Среды рабочего стола"
   description: "Install Desktop environment"
   critical: false
   hidden: false
@@ -437,6 +438,148 @@
       - xfce4-docklike-plugin-git
       - multilockscreen-git
       - skippy-xd-git
+  - name: "GNOME"
+    description: "Desktop environment"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - gnome-skel
+      - gnome-shell
+      - gnome-shell-extensions
+      - chrome-gnome-shell
+      - firefox-extension-gnome-shell-integration
+      - gnome-shell-extension-just-perfection-desktop-git
+      - gnome-control-center
+      - gnome-themes-extra
+      - gnome-menus
+      - gnome-terminal
+      - tilix
+      - gnome-tweaks
+      - nautilus
+      - nautilus-sendto
+      - seahorse-nautilus
+      - nautilus-image-converter
+      - nautilus-share
+      - python-nautilus
+      - gedit
+      - file-roller
+      - gnome-calculator
+      - gnome-nettool
+      - gnome-usage
+      - gnome-multi-writer
+      - dconf-editor
+      - fwupd
+  - name: "KDE Plasma"
+    description: "Desktop environment"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - plasma-skel
+      - plasma-meta
+      - kde-system-meta
+      - plasma-wayland-session
+      - egl-wayland
+      - plasma-desktop
+      - kde-utilities-meta
+      - plasma-pa
+      - packagekit-qt5
+      - kvantum-qt5
+      - konsole
+      - dolphin
+      - ark
+      - kate
+      - ffmpegthumbs
+      - kwalletmanager
+      - kdeconnect
+      - latte-dock
+      - gwenview
+      - fwupd
+      - extra-cmake-modules
+      - libdbusmenu-glib
+      - libdbusmenu-gtk3
+      - libdbusmenu-gtk2
+      - libdbusmenu-qt5
+      - lib32-libdbusmenu-glib
+      - lib32-libdbusmenu-gtk2
+      - applet-window-buttons-git
+  - name: "Budgie"
+    description: "Desktop environment"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - budgie-desktop
+      - gnome-control-center
+      - gnome-backgrounds
+      - gnome-screensaver
+      - gnome-terminal
+      - nautilus-sendto
+      - gnome-nettool
+      - gnome-usage
+      - gnome-multi-writer
+      - dconf-editor
+      - network-manager-applet
+  - name: "Cinnamon"
+    description: "Desktop environment"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - cinnamon
+      - cinnamon-translations
+      - gnome-terminal
+      - gnome-system-monitor
+      - gpicview-gtk3
+      - x-apps
+      - nemo-fileroller
+      - nemo-image-converter
+      - nemo-preview
+      - nemo-seahorse
+      - nemo-share
+  - name: "Mate"
+    description: "Desktop environment"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - mate
+      - mate-extra
+      - network-manager-applet
+  - name: "Deepin"
+    description: "Desktop environment"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - deepin
+      - deepin-extra
+      - file-roller
+  - name: "Lxqt"
+    description: "Desktop environment"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - lxqt
+      - xdg-utils
+      - libpulse
+      - libstatgrab
+      - libsysstat
+      - network-manager-applet
+      - oxygen-icons
+      - breeze
+      - breeze-gtk
+      - pavucontrol-qt
+
+- name: "Window managers / Оконные менеджеры"
+  description: "Install Window manager"
+  critical: false
+  hidden: false
+  selected: false
+  expanded: true
+  subgroups:
   - name: "Openbox"
     description: "Window manager"
     critical: false
@@ -485,47 +628,6 @@
       - polybar-git
       - multilockscreen-git
       - skippy-xd-git
-  - name: "Xfwm4"
-    description: "Window manager xfce"
-    critical: false
-    hidden: false
-    selected: false
-    packages:
-      - xfwm-skel
-      - polkit-gnome
-      - network-manager-applet
-      - xfce4-power-manager
-      - xfce4-settings
-      - xfwm4
-      - sxhkd
-      - picom
-      - redshift
-      - dunst
-      - udisks2
-      - udiskie
-      - ueberzug
-      - gsimplecal
-      - nitrogen
-      - thunar
-      - thunar-archive-plugin
-      - thunar-media-tags-plugin
-      - thunar-volman
-      - tumbler
-      - flameshot
-      - leafpad
-      - pavucontrol
-      - viewnior
-      - xreader
-      - djvulibre
-      - parcellite
-      - wmname
-      - multilockscreen-git
-      - skippy-xd-git
-      - tint2-git
-      - polybar-git
-      - jsoncpp
-      - rxvt-unicode
-      - urxvt-perls
   - name: "Bspwm"
     description: "Tiling window manager"
     critical: false
@@ -653,6 +755,47 @@
       - rxvt-unicode
       - urxvt-perls
       - sxhkd
+  - name: "Xfwm4"
+    description: "Window manager xfce"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - xfwm-skel
+      - polkit-gnome
+      - network-manager-applet
+      - xfce4-power-manager
+      - xfce4-settings
+      - xfwm4
+      - sxhkd
+      - picom
+      - redshift
+      - dunst
+      - udisks2
+      - udiskie
+      - ueberzug
+      - gsimplecal
+      - nitrogen
+      - thunar
+      - thunar-archive-plugin
+      - thunar-media-tags-plugin
+      - thunar-volman
+      - tumbler
+      - flameshot
+      - leafpad
+      - pavucontrol
+      - viewnior
+      - xreader
+      - djvulibre
+      - parcellite
+      - wmname
+      - multilockscreen-git
+      - skippy-xd-git
+      - tint2-git
+      - polybar-git
+      - jsoncpp
+      - rxvt-unicode
+      - urxvt-perls
   - name: "Sway wm"
     description: "Tiling window manager wayland"
     critical: false
@@ -695,140 +838,6 @@
       - galculator
       - file-roller
       - leafpad
-  - name: "Budgie"
-    description: "Desktop environment"
-    critical: false
-    hidden: false
-    selected: false
-    packages:
-      - budgie-desktop
-      - gnome-control-center
-      - gnome-backgrounds
-      - gnome-screensaver
-      - gnome-terminal
-      - nautilus-sendto
-      - gnome-nettool
-      - gnome-usage
-      - gnome-multi-writer
-      - dconf-editor
-      - network-manager-applet
-  - name: "GNOME"
-    description: "Desktop environment"
-    critical: false
-    hidden: false
-    selected: false
-    packages:
-      - gnome-skel
-      - gnome-shell
-      - gnome-shell-extensions
-      - chrome-gnome-shell
-      - firefox-extension-gnome-shell-integration
-      - gnome-shell-extension-just-perfection-desktop-git
-      - gnome-control-center
-      - gnome-themes-extra
-      - gnome-menus
-      - gnome-terminal
-      - tilix
-      - gnome-tweaks
-      - nautilus
-      - nautilus-sendto
-      - seahorse-nautilus
-      - nautilus-image-converter
-      - nautilus-share
-      - python-nautilus
-      - gedit
-      - file-roller
-      - gnome-calculator
-      - gnome-nettool
-      - gnome-usage
-      - gnome-multi-writer
-      - dconf-editor
-      - fwupd
-  - name: "Lxqt"
-    description: "Desktop environment"
-    critical: false
-    hidden: false
-    selected: false
-    packages:
-      - lxqt
-      - xdg-utils
-      - libpulse
-      - libstatgrab
-      - libsysstat
-      - network-manager-applet
-      - oxygen-icons
-      - breeze
-      - breeze-gtk
-      - pavucontrol-qt
-  - name: "Cinnamon"
-    description: "Desktop environment"
-    critical: false
-    hidden: false
-    selected: false
-    packages:
-      - cinnamon
-      - cinnamon-translations
-      - gnome-terminal
-      - gnome-system-monitor
-      - gpicview-gtk3
-      - x-apps
-      - nemo-fileroller
-      - nemo-image-converter
-      - nemo-preview
-      - nemo-seahorse
-      - nemo-share
-  - name: "Mate"
-    description: "Desktop environment"
-    critical: false
-    hidden: false
-    selected: false
-    packages:
-      - mate
-      - mate-extra
-      - network-manager-applet
-  - name: "Deepin"
-    description: "Desktop environment"
-    critical: false
-    hidden: false
-    selected: false
-    packages:
-      - deepin
-      - deepin-extra
-      - file-roller
-  - name: "KDE Plasma"
-    description: "Desktop environment"
-    critical: false
-    hidden: false
-    selected: false
-    packages:
-      - plasma-skel
-      - plasma-meta
-      - kde-system-meta
-      - plasma-wayland-session
-      - egl-wayland
-      - plasma-desktop
-      - kde-utilities-meta
-      - plasma-pa
-      - packagekit-qt5
-      - kvantum-qt5
-      - konsole
-      - dolphin
-      - ark
-      - kate
-      - ffmpegthumbs
-      - kwalletmanager
-      - kdeconnect
-      - latte-dock
-      - gwenview
-      - fwupd
-      - extra-cmake-modules
-      - libdbusmenu-glib
-      - libdbusmenu-gtk3
-      - libdbusmenu-gtk2
-      - libdbusmenu-qt5
-      - lib32-libdbusmenu-glib
-      - lib32-libdbusmenu-gtk2
-      - applet-window-buttons-git
 
 - name: "Ctlos system pkg"
   critical: false

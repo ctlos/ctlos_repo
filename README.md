@@ -1,4 +1,4 @@
-# Ctlos Linux repo
+# Ctlos repo
 
 ```bash
 #!/bin/bash
