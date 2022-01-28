@@ -169,17 +169,6 @@
   hidden: false
   selected: true
   packages:
-    - tcpdump
-    - nmap
-    - b43-fwcutter
-    - broadcom-wl
-    - openssh
-    - openvpn
-    - vpnc
-    - dhcpcd
-    - wpa_supplicant
-    - dialog
-    - net-tools
     - networkmanager
     - networkmanager-openconnect
     - networkmanager-openvpn
@@ -188,8 +177,29 @@
     - networkmanager-l2tp
     - mobile-broadband-provider-info
     - modemmanager
+    - b43-fwcutter
+    - broadcom-wl
     - geoip
     - bluez-utils
+
+- name: "Other Network"
+  description: "Drivers"
+  critical: false
+  hidden: false
+  selected: false
+  packages:
+    - dhcpcd
+    - wpa_supplicant
+    - wireless_tools
+    - wireless-regdb
+    - iw
+    - iwd
+    - net-tools
+    - tcpdump
+    - nmap
+    - openssh
+    - openvpn
+    - vpnc
 
 - name: "Audio"
   description: "Drivers"
