@@ -39,14 +39,20 @@
       - name: linux-headers
         description: Заголовки и скрипты для сборки модулей ядра Linux
       - name: linux-firmware
-        description: Файлы прошивки для ядра Linux
-  - name: "Linux-zen"
+        description: Файлы прошивки
+  - name: "Linux lts"
+    description: "Install linux-lts kernel"
+    selected: false
+    packages:
+      - linux-lts
+      - linux-lts-headers
+  - name: "Linux zen"
     description: "Install linux-zen kernel"
     selected: false
     packages:
       - linux-zen
       - linux-zen-headers
-  - name: "Linux-hardened"
+  - name: "Linux hardened"
     description: "Install linux-hardened kernel"
     selected: false
     packages:

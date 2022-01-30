@@ -29,7 +29,7 @@ _keybase() {
   else
     systemctl start --user kbfs
     echo "systemctl start --user kbfs done"
-    sleep 4
+    sleep 5
     echo $rsync_keybase
   fi
   if read -re -p "stop keybase user service? [Y/n]: " ans && [[ $ans == 'n' || $ans == 'N' ]]; then
