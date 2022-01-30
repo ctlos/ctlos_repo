@@ -190,6 +190,7 @@
   hidden: false
   selected: false
   packages:
+    - broadcom-wl-dkms
     - dhcpcd
     - wpa_supplicant
     - wireless_tools

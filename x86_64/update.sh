@@ -23,14 +23,13 @@ repo_keybase=/run/user/1000/keybase/kbfs/public/cvc/ctlos_repo/
 
 _keybase() {
   srv_keybase="$(systemctl status --user kbfs | grep -i running 2>/dev/null || echo '')"
-  rsync_keybase=$(rsync -cauvCLP --delete-excluded --delete --exclude={"build",".git*",".*ignore"} "$local_repo"/ "$repo_keybase")
   if [[ "$srv_keybase" ]]; then
-    echo $rsync_keybase
+    rsync -cauvCLP --delete-excluded --delete --exclude={"build",".git*",".*ignore"} "$local_repo"/ "$repo_keybase"
   else
     systemctl start --user kbfs
+    sleep 4
     echo "systemctl start --user kbfs done"
-    sleep 5
-    echo $rsync_keybase
+    rsync -cauvCLP --delete-excluded --delete --exclude={"build",".git*",".*ignore"} "$local_repo"/ "$repo_keybase"
   fi
   if read -re -p "stop keybase user service? [Y/n]: " ans && [[ $ans == 'n' || $ans == 'N' ]]; then
     echo "skip stop kbfs"
