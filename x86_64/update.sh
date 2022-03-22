@@ -70,7 +70,7 @@ elif [ "$1" = "-all" ]; then
   cp -f ctlos_repo.db.tar.zst ctlos_repo.db
   cp -f ctlos_repo.files.tar.zst ctlos_repo.files
   _keybase
-  rsync -cauvCLP --delete-excluded --delete "$local_repo" "$repo_ctlos"
+  # rsync -cauvCLP --delete-excluded --delete "$local_repo" "$repo_ctlos"
   rsync -cauvCLP --delete-excluded --delete "$local_repo" "$repo_osdn"
   echo "add pkg, rsync all repo"
 else
