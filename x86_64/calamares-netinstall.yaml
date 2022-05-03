@@ -642,7 +642,6 @@
       - jsoncpp
       - polybar-git
       - multilockscreen-git
-      - skippy-xd-git
   - name: "Bspwm"
     description: "Tiling window manager"
     critical: false
