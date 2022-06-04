@@ -640,7 +640,7 @@
       - skippy-xd-git
       - tint2-git
       - jsoncpp
-      - polybar-git
+      - polybar
       - multilockscreen-git
   - name: "Bspwm"
     description: "Tiling window manager"
@@ -681,7 +681,7 @@
       - skippy-xd-git
       - multilockscreen-git
       - tint2-git
-      - polybar-git
+      - polybar
       - jsoncpp
       - rxvt-unicode
       - urxvt-perls
@@ -723,7 +723,7 @@
       - udiskie
       - skippy-xd-git
       - multilockscreen-git
-      - polybar-git
+      - polybar
       - jsoncpp
   - name: "Franken wm"
     description: "Tiling window manager"
@@ -764,7 +764,7 @@
       - wmname
       - multilockscreen-git
       - tint2-git
-      - polybar-git
+      - polybar
       - jsoncpp
       - rxvt-unicode
       - urxvt-perls
@@ -806,7 +806,7 @@
       - multilockscreen-git
       - skippy-xd-git
       - tint2-git
-      - polybar-git
+      - polybar
       - jsoncpp
       - rxvt-unicode
       - urxvt-perls
