@@ -31,12 +31,12 @@ _keybase() {
     echo "systemctl start --user kbfs done"
     rsync -cauvCLP --delete-excluded --delete --exclude={"build",".git*",".*ignore"} "$local_repo"/ "$repo_keybase"
   fi
-  if read -re -p "stop keybase user service? [Y/n]: " ans && [[ $ans == 'n' || $ans == 'N' ]]; then
-    echo "skip stop kbfs"
-  else
-    systemctl stop --user kbfs
-    echo "stop kbfs done"
-  fi
+  # if read -re -p "stop keybase user service? [Y/n]: " ans && [[ $ans == 'n' || $ans == 'N' ]]; then
+  #   echo "skip stop kbfs"
+  # else
+  #   systemctl stop --user kbfs
+  #   echo "stop kbfs done"
+  # fi
   echo "rsync keybase repo"
 }
 
