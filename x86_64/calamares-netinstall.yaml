@@ -449,7 +449,7 @@
       - djvulibre
       - xreader
       - gnome-multi-writer
-      - xfce4-windowck-plugin
+      - xfce4-windowck-plugin-git
       - xfce4-docklike-plugin
       - multilockscreen-git
       - skippy-xd-git
