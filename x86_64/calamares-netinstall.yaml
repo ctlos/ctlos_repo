@@ -308,6 +308,7 @@
       - gnome-keyring
       - yay-bin
       - inxi
+      - downgrade
       - tldr
       - fzf-extras
       - neofetch
