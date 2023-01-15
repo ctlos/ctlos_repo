@@ -267,8 +267,7 @@
     selected: true
     packages:
       - qt5ct
-      - qt5-styleplugins
-      - qgnomeplatform
+      - qt6ct
       - kvantum
   - name: "Themes"
     critical: false
@@ -330,7 +329,6 @@
       - mpc
       - ncmpcpp
       - newsboat
-      - micro
       - git
       - wget
       - xsel
@@ -380,6 +378,7 @@
       - keepassxc
       - veracrypt
       - telegram-desktop
+      - qbittorrent
 
 - name: "Dm"
   description: "Login manager"
