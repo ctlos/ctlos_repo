@@ -89,9 +89,9 @@
       - xf86-video-amdgpu
       - xf86-video-ati
       - xf86-video-nouveau
+      - xf86-video-vesa
       - xf86-video-fbdev
       - xf86-video-dummy
-      - xf86-video-vesa
       - xf86-video-openchrome
       - xf86-video-sisusb
       - xf86-video-vmware
@@ -182,6 +182,7 @@
     - b43-fwcutter
     - broadcom-wl
     - geoip
+    - bluez
     - bluez-utils
 
 - name: "Other Network"
@@ -211,8 +212,6 @@
   hidden: false
   selected: true
   packages:
-    - alsa-firmware
-    - alsa-utils
     - gstreamer
     - gstreamer-vaapi
     - gst-libav
@@ -220,14 +219,18 @@
     - gst-plugins-base
     - gst-plugins-good
     - gst-plugins-ugly
-    - pulseaudio
-    - pulseaudio-alsa
-    - pulseaudio-bluetooth
-    - pulseaudio-equalizer
     - lib32-alsa-plugins
     - libcdio
     - libdvdread
     - libdvdnav
+    - alsa-firmware
+    - alsa-plugins
+    - alsa-utils
+    - pipewire-pulse
+    - wireplumber
+    - pipewire-alsa
+    - pipewire-jack
+    - rtkit
 
 - name: "Ctlos repo pkg"
   critical: false
