@@ -349,7 +349,6 @@
       - imagemagick
       - w3m
       - slop
-      - youtube-dl
       - tor
       - privoxy
       - xdotool
@@ -363,17 +362,16 @@
     selected: true
     packages:
       - timeshift
-      - archlinux-appstream-data-pamac
       - pamac-aur
+      - libpamac-aur
       - gparted
       - firefox
-      - firefox-i18n-ru
+      - firefox-i18n-$LOCALE
       - firefox-ublock-origin
       - mpv
       - smplayer
       - smplayer-skins
       - smplayer-themes
-      - simplescreenrecorder
       - audacious
       - gufw
       - keepassxc
@@ -880,17 +878,32 @@
   selected: false
   packages:
     - cups
+    - cups-browsed
     - cups-filters
     - cups-pdf
-    - ghostscript
-    - gsfonts
     - foomatic-db
     - foomatic-db-engine
-    - foomatic-db-ppds
+    - foomatic-db-gutenprint-ppds
     - foomatic-db-nonfree
     - foomatic-db-nonfree-ppds
+    - foomatic-db-ppds
+    - ghostscript
+    - gsfonts
     - gutenprint
-    - foomatic-db-gutenprint-ppds
-    - system-config-printer
-    - hplip
     - splix
+    - system-config-printer
+
+- name: "HP printer support"
+  description: "Packages HP"
+  hidden: false
+  expanded: false
+  selected: false
+  packages:
+    - hplip
+    - python-pyqt5
+    - python-reportlab
+    - xsane
+    - cups
+    - cups-browsed
+    - cups-filters
+    - cups-pdf
