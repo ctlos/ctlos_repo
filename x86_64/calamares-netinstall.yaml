@@ -502,6 +502,7 @@
       - kde-utilities-meta
       - plasma-pa
       - packagekit-qt5
+      - kvantum
       - kvantum-qt5
       - konsole
       - dolphin
