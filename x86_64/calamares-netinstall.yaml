@@ -92,7 +92,6 @@
       - xf86-video-vesa
       - xf86-video-fbdev
       - xf86-video-dummy
-      - xf86-video-openchrome
       - xf86-video-sisusb
       - xf86-video-vmware
       - xf86-video-voodoo
@@ -108,6 +107,7 @@
     selected: true
     packages:
       - mesa
+      - mesa-utils
       - mesa-vdpau
       - intel-tbb
       - libva
@@ -272,6 +272,7 @@
       - qt5ct
       - qt6ct
       - kvantum
+      - kvantum-qt5
   - name: "Themes"
     critical: false
     hidden: false
