@@ -882,6 +882,7 @@
   hidden: false
   selected: false
   packages:
+    - avahi
     - cups
     - cups-browsed
     - cups-filters
