@@ -300,7 +300,7 @@
       - ttf-roboto
       - ttf-roboto-mono
       - ttf-clear-sans
-      - nerd-fonts-hack
+      - ttf-hack-nerd
       - otb-uw_ttyp0
       - noto-fonts-cjk
       - noto-fonts-emoji
