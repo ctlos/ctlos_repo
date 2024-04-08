@@ -56,7 +56,7 @@ _keybase() {
 
 _srht() {
   if [[ -d "$srht_repo" ]]; then
-    rsync -avrCLP --delete --exclude={"build",".git*"} "$local_repo" "$srht_repo"
+    rsync -avrCLP --delete --exclude={"build",".git*"} "$local_repo/" "$srht_repo"
     cd $srht_repo
     _git_up
     cd $local_repo
