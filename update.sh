@@ -53,7 +53,7 @@ _keybase() {
   echo "rsync keybase repo"
 }
 
--srht() {
+_srht() {
   if [[ -d "$srht_repo" ]]; then
     rsync -avrCLP --delete --exclude={"build",".git*"} "$local_repo" "$srht_repo"
     cd $srht_repo
@@ -99,7 +99,7 @@ elif [ "$1" = "-all" ]; then
 fi
 
 ## sync ctlos-aur repo
-if [ "$1" = "-aur" && -d "$aur_ctlos" ]; then
+if [[ "$1" = "-aur" && -d "$aur_ctlos" ]]; then
   srv_keybase="$(systemctl status --user kbfs | grep -i running 2>/dev/null || echo '')"
   if [[ "$srv_keybase" ]]; then
     rsync -cauvCLP --delete-excluded --delete "$aur_ctlos" "$aur_keybase"
