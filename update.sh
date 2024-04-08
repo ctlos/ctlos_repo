@@ -18,6 +18,7 @@
 local_repo=${PWD}
 arch=x86_64
 echo $local_repo
+echo
 repo_name=ctlos_repo
 repo_ctlos=cretm@cloud.ctlos.ru:/home/cretm/app/cloud.ctlos.ru/$repo_name/
 repo_osdn=creio@storage.osdn.net:/storage/groups/c/ct/ctlos/$repo_name/
@@ -98,7 +99,7 @@ elif [ "$1" = "-all" ]; then
   _srht
   echo "add pkg, rsync all repo"
 
-elif [ "$command" = "-l" ]; then
+elif [ "$1" = "-l" ]; then
   pacman -Sl $repo_name --color=always | sed 's/^/  /'
   echo -e "\n  $repo_name "$(pacman -Sql $repo_name | wc -l)" packages: pacman -Sl $repo_name"
 fi
