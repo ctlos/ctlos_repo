@@ -18,14 +18,15 @@
 local_repo=${PWD}
 arch=x86_64
 echo $local_repo
-repo_ctlos=cretm@cloud.ctlos.ru:/home/cretm/app/cloud.ctlos.ru/ctlos_repo/
-repo_osdn=creio@storage.osdn.net:/storage/groups/c/ct/ctlos/ctlos_repo/
-repo_keybase=/run/user/1000/keybase/kbfs/public/cvc/ctlos_repo/
+repo_name=ctlos_repo
+repo_ctlos=cretm@cloud.ctlos.ru:/home/cretm/app/cloud.ctlos.ru/$repo_name/
+repo_osdn=creio@storage.osdn.net:/storage/groups/c/ct/ctlos/$repo_name/
+repo_keybase=/run/user/1000/keybase/kbfs/public/cvc/$repo_name/
 
 aur_ctlos=/media/files/github/ctlos/ctlos-aur/x86_64/
 aur_keybase=/run/user/1000/keybase/kbfs/public/cvc/ctlos-aur/
 
-srht_repo=/media/files/srht/ctlos/ctlos_repo/
+srht_repo=/media/files/srht/ctlos/$repo_name/
 
 _git_up() {
   git add --all
@@ -37,12 +38,12 @@ _git_up() {
 _keybase() {
   srv_keybase="$(systemctl status --user kbfs | grep -i running 2>/dev/null || echo '')"
   if [[ "$srv_keybase" ]]; then
-    rsync -cauvCLP --delete-excluded --delete --exclude={"build",".git*",".*ignore"} "$local_repo/$arch/" "$repo_keybase"
+    rsync -cauvCLP --info=stats2 --delete-excluded --delete --exclude={"build",".git*",".*ignore"} "$local_repo/$arch/" "$repo_keybase"
   else
     systemctl start --user kbfs
     sleep 4
     echo "systemctl start --user kbfs done"
-    rsync -cauvCLP --delete-excluded --delete --exclude={"build",".git*",".*ignore"} "$local_repo/$arch/" "$repo_keybase"
+    rsync -cauvCLP --info=stats2 --delete-excluded --delete --exclude={"build",".git*",".*ignore"} "$local_repo/$arch/" "$repo_keybase"
   fi
   # if read -re -p "stop keybase user service? [Y/n]: " ans && [[ $ans == 'n' || $ans == 'N' ]]; then
   #   echo "skip stop kbfs"
@@ -64,20 +65,20 @@ _srht() {
 
 if [ "$1" = "-add" ]; then
   cd $local_repo/$arch
-  # repo-add -s -v -n -R ctlos_repo.db.tar.zst *.pkg.tar.xz
-  # repo-add -n -R ctlos_repo.db.tar.zst *.pkg.tar.{xz,zst}
-  repo-add -n -R -q ctlos_repo.db.tar.zst *.pkg.tar.zst 2>/dev/null;
-  rm ctlos_repo.{db,files}
-  cp -f ctlos_repo.db.tar.zst ctlos_repo.db
-  cp -f ctlos_repo.files.tar.zst ctlos_repo.files
+  # repo-add -s -v -n -R $repo_name.db.tar.zst *.pkg.tar.xz
+  # repo-add -n -R $repo_name.db.tar.zst *.pkg.tar.{xz,zst}
+  repo-add -n -R -q $repo_name.db.tar.zst *.pkg.tar.zst 2>/dev/null;
+  rm $repo_name.{db,files}
+  cp -f $repo_name.db.tar.zst $repo_name.db
+  cp -f $repo_name.files.tar.zst $repo_name.files
   ##optional-remove for old repo.db##
   # rm *gz.old{,.sig}
 echo "Repo Up"
 elif [ "$1" = "-clean" ]; then
-  rm ctlos_repo*
+  rm $repo_name*
   echo "Repo clean"
 elif [ "$1" = "-o" ]; then
-  # rsync -cauvCLP --delete-excluded --delete "$local_repo/$arch/" "$repo_osdn"
+  # rsync -cauvCLP --info=stats2 --delete-excluded --delete "$local_repo/$arch/" "$repo_osdn"
   echo "rsync osdn repo"
 elif [ "$1" = "-sync" ]; then
   _keybase
@@ -88,14 +89,18 @@ elif [ "$1" = "-k" ]; then
   _keybase
 elif [ "$1" = "-all" ]; then
   cd $local_repo/$arch
-  repo-add -n -R -q ctlos_repo.db.tar.zst *.pkg.tar.zst
-  rm ctlos_repo.{db,files}
-  cp -f ctlos_repo.db.tar.zst ctlos_repo.db
-  cp -f ctlos_repo.files.tar.zst ctlos_repo.files
+  repo-add -n -R -q $repo_name.db.tar.zst *.pkg.tar.zst
+  rm $repo_name.{db,files}
+  cp -f $repo_name.db.tar.zst $repo_name.db
+  cp -f $repo_name.files.tar.zst $repo_name.files
   _keybase
   _git_up
   _srht
   echo "add pkg, rsync all repo"
+
+elif [ "$command" = "-l" ]; then
+  pacman -Sl $repo_name --color=always | sed 's/^/  /'
+  echo -e "\n  $repo_name "$(pacman -Sql $repo_name | wc -l)" packages: pacman -Sl $repo_name"
 fi
 
 ## sync ctlos-aur repo
