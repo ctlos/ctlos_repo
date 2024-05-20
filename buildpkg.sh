@@ -12,7 +12,7 @@ fi
 
 if [[ -f $HOME/.config/clean-chroot-manager.conf ]]; then
   mv -f $HOME/.config/clean-chroot-manager.{conf,conf.bak}
-  cp /usr/share/clean-chroot-manager/ccm.skel $HOME/.config/clean-chroot-manager.conf
+  cp clean-chroot-manager.conf $HOME/.config/clean-chroot-manager.conf
 fi
 
 mkdir $PWD/build
