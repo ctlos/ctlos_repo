@@ -46,18 +46,21 @@
     packages:
       - linux-lts
       - linux-lts-headers
+      - linux-firmware
   - name: "Linux zen"
     description: "Install linux-zen kernel"
     selected: false
     packages:
       - linux-zen
       - linux-zen-headers
+      - linux-firmware
   - name: "Linux hardened"
     description: "Install linux-hardened kernel"
     selected: false
     packages:
       - linux-hardened
       - linux-hardened-headers
+      - linux-firmware
   - name: "Linux atm"
     description: "Драйверы для поддержки сети ATM(банкоматов) под Linux"
     selected: false
