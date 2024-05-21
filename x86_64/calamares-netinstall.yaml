@@ -324,6 +324,7 @@
       - oh-my-zsh-git
       - zsh-autosuggestions
       - zsh-fast-syntax-highlighting-git
+      - pipe-viewer-git
       - cava
       - gotop-bin
       - tmux
