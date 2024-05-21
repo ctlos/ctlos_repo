@@ -5,8 +5,6 @@
   selected: true
   packages:
     - base-devel
-    - amd-ucode
-    - intel-ucode
     - arch-install-scripts
     - bind-tools
     - gpm
@@ -22,6 +20,15 @@
     - lsscsi
     - sdparm
     - sg3_utils
+
+- name: "Ucode"
+  description: "amd & intel"
+  critical: false
+  hidden: false
+  selected: false
+  packages:
+    - amd-ucode
+    - intel-ucode
 
 - name: "Kernel"
   description: "Install Kernel"
@@ -117,6 +124,10 @@
       - libva-mesa-driver
       - libva-intel-driver
       - libva-vdpau-driver
+  - name: "Video Acceleration (mesa-amber)"
+    selected: false
+    packages:
+      - mesa-amber
   - name: "Xorg input Drivers"
     selected: true
     packages:
