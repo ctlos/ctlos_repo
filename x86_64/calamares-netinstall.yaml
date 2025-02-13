@@ -397,6 +397,7 @@
       - veracrypt
       - telegram-desktop
       - qbittorrent
+      - localsend-bin
 
 - name: "Dm"
   description: "Login manager"
@@ -468,7 +469,8 @@
       - gnome-multi-writer
       - xfce4-windowck-plugin-git
       - xfce4-docklike-plugin
-      - multilockscreen-git
+      - betterlockscreen
+      #- multilockscreen-git
       - skippy-xd-git
   - name: "GNOME"
     description: "Desktop environment"
@@ -659,7 +661,8 @@
       - tint2-git
       - jsoncpp
       - polybar
-      - multilockscreen-git
+      - betterlockscreen
+      #- multilockscreen-git
   - name: "Bspwm"
     description: "Tiling window manager"
     critical: false
@@ -697,7 +700,8 @@
       - parcellite
       - wmname
       - skippy-xd-git
-      - multilockscreen-git
+      - betterlockscreen
+      #- multilockscreen-git
       - tint2-git
       - polybar
       - jsoncpp
@@ -740,7 +744,8 @@
       - udisks2
       - udiskie
       - skippy-xd-git
-      - multilockscreen-git
+      - betterlockscreen
+      #- multilockscreen-git
       - polybar
       - jsoncpp
   - name: "Franken wm"
@@ -780,7 +785,8 @@
       - djvulibre
       - parcellite
       - wmname
-      - multilockscreen-git
+      - betterlockscreen
+      #- multilockscreen-git
       - tint2-git
       - polybar
       - jsoncpp
@@ -821,7 +827,8 @@
       - djvulibre
       - parcellite
       - wmname
-      - multilockscreen-git
+      - betterlockscreen
+      #- multilockscreen-git
       - skippy-xd-git
       - tint2-git
       - polybar
