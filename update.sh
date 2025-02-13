@@ -80,9 +80,9 @@ elif [ "$1" = "-clean" ]; then
   echo "Repo clean"
 elif [ "$1" = "-o" ]; then
   # rsync -cauvCLP --info=stats2 --delete-excluded --delete "$local_repo/$arch/" "$repo_osdn"
-  echo "rsync osdn repo"
+  echo "rsync repo"
 elif [ "$1" = "-sync" ]; then
-  _keybase
+  # _keybase
   _git_up
   _srht
   echo "rsync all repo"
@@ -94,7 +94,7 @@ elif [ "$1" = "-all" ]; then
   rm $repo_name.{db,files}
   cp -f $repo_name.db.tar.zst $repo_name.db
   cp -f $repo_name.files.tar.zst $repo_name.files
-  _keybase
+  # _keybase
   _git_up
   _srht
   echo "add pkg, rsync all repo"
