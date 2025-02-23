@@ -29,6 +29,7 @@ aur_keybase=/run/user/1000/keybase/kbfs/public/cvc/ctlos-aur/
 srht_repo=/media/files/srht/ctlos/$repo_name/
 
 _git_up() {
+  git status
   git add --all
   msg="$(date +%d.%m.%Y) Update"
   git commit -a -m "$msg"

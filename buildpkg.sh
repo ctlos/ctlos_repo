@@ -12,6 +12,12 @@ if [[ "$1" = "-sync" && -d "$dir_repo" && -f $dir_repo/update.sh ]]; then
   cd $PWD
   echo "sync done!"; exit 1
 fi
+## repo status
+if [[ "$1" = "-status" && -d "$dir_repo" ]]; then
+  cd $dir_repo
+  git status
+  exit 1
+fi
 
 if [[ ! $(pacman -Q | grep clean-chroot-manager) ]]; then
   echo "ERROR. no install clean-chroot-manager"; exit 1
@@ -34,6 +40,7 @@ sudo ccm S
 if [[ $(ls | grep *.pkg*) && ! $(ls | grep *.sign) ]]; then
   find './' -maxdepth 1 -type f -name '*.pkg.tar.zst' -exec gpg --pinentry-mode loopback --passphrase=${GPG_PASS} -b '{}' \;
   cp -rfv *.pkg* $repo
+  makepkg --printsrcinfo > $PWD/.SRCINFO
   cd ..
   rm -rf $PWD/build
 fi
