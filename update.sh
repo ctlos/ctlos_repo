@@ -3,7 +3,7 @@
 # rsync -cauv --delete --info=stats2 --exclude={"caur.files","*.files.tar*","caur.db","*.db.tar*"} /var/cache/pacman/caur/ /home/cretm/app/dev.ctlos.ru/ctlos-aur
 
 # find './' -maxdepth 1 -type f -regex '.*\.\(zst\|xz\)' -exec gpg -b '{}' \;
-# find './' -type f -exec gpg --pinentry-mode loopback --passphrase=${GPG_PASS} -b '{}' \;
+# find './' -maxdepth 1 -type f -exec gpg --pinentry-mode loopback --passphrase=${GPG_PASS} -b '{}' \;
 
 # apindex .
 # ./update.sh -add
@@ -13,7 +13,6 @@
 
 # https://osdn.net/projects/ctlos/storage/ctlos_repo/x86_64/
 # https://github.com/ctlos/ctlos_repo/tree/master/x86_64
-# https://cvc.keybase.pub/ctlos_repo
 
 local_repo=${PWD}
 arch=x86_64
@@ -69,11 +68,11 @@ if [ "$1" = "-add" ]; then
   # repo-add -s -v -n -R $repo_name.db.tar.zst *.pkg.tar.xz
   # repo-add -n -R $repo_name.db.tar.zst *.pkg.tar.{xz,zst}
   repo-add -n -R -q $repo_name.db.tar.zst *.pkg.tar.zst #2>/dev/null;
-  rm $repo_name.{db,files}
+  rm -rf $repo_name.{db,files}
   cp -f $repo_name.db.tar.zst $repo_name.db
   cp -f $repo_name.files.tar.zst $repo_name.files
   ##optional-remove for old repo.db##
-  # rm *gz.old{,.sig}
+  # rm -rf *{zst,gz}.old{,.sig}
 echo "Repo Up"
 elif [ "$1" = "-clean" ]; then
   rm $repo_name*
@@ -91,7 +90,7 @@ elif [ "$1" = "-k" ]; then
 elif [ "$1" = "-all" ]; then
   cd $local_repo/$arch
   repo-add -n -R -q $repo_name.db.tar.zst *.pkg.tar.zst
-  rm $repo_name.{db,files}
+  rm -rf $repo_name.{db,files}
   cp -f $repo_name.db.tar.zst $repo_name.db
   cp -f $repo_name.files.tar.zst $repo_name.files
   # _keybase
