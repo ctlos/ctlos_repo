@@ -76,6 +76,7 @@ if [ "$1" = "-add" ]; then
   # rm -rf *{zst,gz}.old{,.sig}
 echo "Repo Up"
 elif [ "$1" = "-clean" ]; then
+  cd $local_repo/$arch
   rm $repo_name*
   echo "Repo clean"
 elif [ "$1" = "-o" ]; then
