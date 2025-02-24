@@ -40,9 +40,9 @@ sudo ccm S
 if [[ $(ls | grep *.pkg*) && ! $(ls | grep *.sign) ]]; then
   find './' -maxdepth 1 -type f -name '*.pkg.tar.zst' -exec gpg --pinentry-mode loopback --passphrase=${GPG_PASS} -b '{}' \;
   cp -rfv *.pkg* $repo
-  makepkg --printsrcinfo > $PWD/.SRCINFO
   cd ..
   rm -rf $PWD/build
+  makepkg --printsrcinfo > $PWD/.SRCINFO
 fi
 
 if [[ -f $HOME/.config/clean-chroot-manager.conf.bak ]]; then
