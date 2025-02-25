@@ -6,15 +6,15 @@ repo=/media/files/github/ctlos/ctlos_repo/x86_64
 dir_repo=/media/files/github/ctlos/ctlos_repo
 PWD_DIR=$PWD
 
-## sync repo
-if [[ "$1" = "-sync" && -d "$dir_repo" && -f $dir_repo/update.sh ]]; then
+## deploy repo
+if [[ "$1" = "deploy" && -d "$dir_repo" && -f $dir_repo/update.sh ]]; then
   cd $dir_repo
   sh update.sh -all
   cd $PWD_DIR
-  echo "sync done!"; exit 1
+  echo "deploy done!"; exit 1
 fi
 ## repo status
-if [[ "$1" = "-status" && -d "$dir_repo" ]]; then
+if [[ "$1" = "status" && -d "$dir_repo" ]]; then
   cd $dir_repo
   git status
   exit 1
