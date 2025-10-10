@@ -27,5 +27,5 @@ exit 0
 ```bash
 ./update.sh -all
 # или
-./buildpkg.sh -sync
+./buildpkg.sh deploy
 ```

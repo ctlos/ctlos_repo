@@ -470,7 +470,7 @@
       - djvulibre
       - xreader
       - gnome-multi-writer
-      - xfce4-windowck-plugin-git
+      - xfce4-windowck-plugin
       - xfce4-docklike-plugin
       - betterlockscreen
       #- multilockscreen-git
