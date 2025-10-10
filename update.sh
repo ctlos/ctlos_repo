@@ -110,6 +110,6 @@ if [[ "$1" = "-aur" && -d "$aur_ctlos" ]]; then
   srv_keybase="$(systemctl status --user kbfs | grep -i running 2>/dev/null || echo '')"
   if [[ "$srv_keybase" ]]; then
     rsync -cauvCLP --delete-excluded --delete "$aur_ctlos" "$aur_keybase"
+    echo "sync aur"
   fi
-  echo "sync aur"
 fi
