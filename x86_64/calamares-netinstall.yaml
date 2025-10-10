@@ -95,7 +95,6 @@
   - name: "Xorg video Drivers"
     selected: true
     packages:
-      - xf86-video-intel
       - xf86-video-amdgpu
       - xf86-video-ati
       - xf86-video-nouveau
@@ -105,6 +104,10 @@
       - xf86-video-sisusb
       - xf86-video-vmware
       - xf86-video-voodoo
+  - name: "Xorg video Drivers(Other)"
+    selected: false
+    packages:
+      - xf86-video-intel
   - name: "Nvidia video Drivers"
     selected: false
     packages:
@@ -462,7 +465,7 @@
       - file-roller
       - flameshot
       - leafpad
-      - pavucontrol
+      - pavucontrol-qt
       - viewnior
       - djvulibre
       - xreader
@@ -631,7 +634,7 @@
       - lxmenu-data
       - lxappearance
       - nitrogen
-      - obconf
+      - obconf-qt
       - lxrandr
       - thunar
       - thunar-archive-plugin
@@ -655,7 +658,7 @@
       - udisks2
       - udiskie
       - volumeicon
-      - alttab-git
+      - alttab
       - obkey-git
       - skippy-xd-git
       - tint2-git
