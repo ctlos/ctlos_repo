@@ -332,7 +332,7 @@
       - downgrade
       - tldr
       - fzf-extras
-      - neofetch
+      - fastfetch
       - bash-completion
       - syntax-highlighting
       - oh-my-zsh-git
