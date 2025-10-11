@@ -295,7 +295,7 @@
     hidden: false
     selected: true
     packages:
-      - arc-gtk-theme
+      - arc-gtk-theme-git
       - ctlos-qogir
   - name: "Icons & Cursors"
     critical: false
