@@ -68,7 +68,7 @@ if [ "$1" = "-add" ]; then
   cd $local_repo/$arch
   # repo-add -s -v -n -R $repo_name.db.tar.zst *.pkg.tar.xz
   # repo-add -n -R $repo_name.db.tar.zst *.pkg.tar.{xz,zst}
-  repo-add -n -R -q $repo_name.db.tar.zst *.pkg.tar.zst #2>/dev/null;
+  repo-add -s -n -R -q $repo_name.db.tar.zst *.pkg.tar.zst #2>/dev/null;
   rm -rf $repo_name.{db,files}
   cp -f $repo_name.db.tar.zst $repo_name.db
   cp -f $repo_name.files.tar.zst $repo_name.files
@@ -91,7 +91,7 @@ elif [ "$1" = "-k" ]; then
   _keybase
 elif [ "$1" = "-all" ]; then
   cd $local_repo/$arch
-  repo-add -n -R -q $repo_name.db.tar.zst *.pkg.tar.zst
+  repo-add -s -n -R -q $repo_name.db.tar.zst *.pkg.tar.zst
   rm -rf $repo_name.{db,files}
   cp -f $repo_name.db.tar.zst $repo_name.db
   cp -f $repo_name.files.tar.zst $repo_name.files
