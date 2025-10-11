@@ -337,7 +337,7 @@
       - syntax-highlighting
       - oh-my-zsh-git
       - zsh-autosuggestions
-      - zsh-fast-syntax-highlighting-git
+      - zsh-fast-syntax-highlighting
       - pipe-viewer-git
       - cava
       - gotop-bin
