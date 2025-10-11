@@ -70,8 +70,10 @@ if [ "$1" = "-add" ]; then
   # repo-add -n -R $repo_name.db.tar.zst *.pkg.tar.{xz,zst}
   repo-add -s -n -R -q $repo_name.db.tar.zst *.pkg.tar.zst #2>/dev/null;
   rm -f "$repo_name".{db,db.sig,files,files.sig}
-  # cp -f $repo_name.db.tar.zst $repo_name.db
-  # cp -f $repo_name.files.tar.zst $repo_name.files
+  cp -f $repo_name.db.tar.zst $repo_name.db
+  cp -f $repo_name.db.tar.zst.sig $repo_name.db.sig
+  cp -f $repo_name.files.tar.zst $repo_name.files
+  cp -f $repo_name.files.tar.zst.sig $repo_name.files.sig
   ##optional-remove for old repo.db##
   rm -f *{zst,gz}.old{,.sig}
 echo "Repo Up"
@@ -93,8 +95,11 @@ elif [ "$1" = "-all" ]; then
   cd $local_repo/$arch
   repo-add -s -n -R -q $repo_name.db.tar.zst *.pkg.tar.zst
   rm -f "$repo_name".{db,db.sig,files,files.sig}
-  # cp -f $repo_name.db.tar.zst $repo_name.db
-  # cp -f $repo_name.files.tar.zst $repo_name.files
+  cp -f $repo_name.db.tar.zst $repo_name.db
+  cp -f $repo_name.db.tar.zst.sig $repo_name.db.sig
+  cp -f $repo_name.files.tar.zst $repo_name.files
+  cp -f $repo_name.files.tar.zst.sig $repo_name.files.sig
+  ##optional-remove for old repo.db##
   rm -f *{zst,gz}.old{,.sig}
   # _keybase
   _git_up
