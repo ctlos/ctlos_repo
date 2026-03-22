@@ -2,8 +2,9 @@
 
 # GPG_PASS to ~/.env
 
-repo=/media/files/github/ctlos/ctlos_repo/x86_64
-dir_repo=/media/files/github/ctlos/ctlos_repo
+repo_name=ctlos_repo
+repo=/media/files/github/ctlos/$repo_name/x86_64
+dir_repo=/media/files/github/ctlos/$repo_name
 PWD_DIR=$PWD
 
 ## deploy repo
@@ -11,6 +12,7 @@ if [[ "$1" = "deploy" && -d "$dir_repo" && -f $dir_repo/update.sh ]]; then
   cd $dir_repo
   sh update.sh -all
   cd $PWD_DIR
+  sudo pacsync $repo_name >/dev/null;
   sudo pacman -Syy
   echo "deploy done!"; exit 1
 fi
