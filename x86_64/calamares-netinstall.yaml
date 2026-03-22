@@ -230,7 +230,7 @@
   selected: true
   packages:
     - gstreamer
-    - gstreamer-vaapi
+    - gst-plugin-va
     - gst-libav
     - gst-plugins-bad
     - gst-plugins-base
@@ -464,7 +464,7 @@
       - galculator
       - file-roller
       - flameshot
-      # - leafpad
+      - mousepad
       - pavucontrol-qt
       - viewnior
       - djvulibre
@@ -645,7 +645,7 @@
       - xfce4-terminal
       - file-roller
       - flameshot
-      # - leafpad
+      - mousepad
       - pavucontrol
       - viewnior
       - xreader
@@ -696,7 +696,7 @@
       - thunar-volman
       - tumbler
       - flameshot
-      # - leafpad
+      - mousepad
       - pavucontrol
       - viewnior
       - xreader
@@ -734,7 +734,7 @@
       - xfce4-terminal
       - file-roller
       - flameshot
-      # - leafpad
+      - mousepad
       - pavucontrol
       - viewnior
       - xreader
@@ -781,7 +781,7 @@
       - thunar-volman
       - tumbler
       - flameshot
-      # - leafpad
+      - mousepad
       - pavucontrol
       - viewnior
       - xreader
@@ -823,7 +823,7 @@
       - thunar-volman
       - tumbler
       - flameshot
-      # - leafpad
+      - mousepad
       - pavucontrol
       - viewnior
       - xreader
@@ -879,7 +879,7 @@
       - tumbler
       - galculator
       - file-roller
-      # - leafpad
+      - mousepad
 
 - name: "Ctlos system pkg"
   critical: false
