@@ -101,6 +101,7 @@ elif [ "$1" = "-all" ]; then
   cp -f $repo_name.files.tar.zst.sig $repo_name.files.sig
   ##optional-remove for old repo.db##
   rm -f *{zst,gz}.old{,.sig}
+  sudo pacsync $repo_name >/dev/null;
   # _keybase
   _git_up
   _srht

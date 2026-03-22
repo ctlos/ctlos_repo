@@ -11,6 +11,7 @@ if [[ "$1" = "deploy" && -d "$dir_repo" && -f $dir_repo/update.sh ]]; then
   cd $dir_repo
   sh update.sh -all
   cd $PWD_DIR
+  sudo pacman -Syy
   echo "deploy done!"; exit 1
 fi
 ## repo status
