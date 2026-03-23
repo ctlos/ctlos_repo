@@ -633,7 +633,7 @@
       - jgmenu
       - lxmenu-data
       - lxappearance
-      - nitrogen
+      - xfdesktop
       - obconf-qt
       - lxrandr
       - thunar
@@ -659,9 +659,8 @@
       - udiskie
       - volumeicon
       - alttab
-      - obkey-git
       - skippy-xd-git
-      - tint2-git
+      - tint2
       - jsoncpp
       - polybar
       - betterlockscreen
@@ -689,7 +688,7 @@
       - gsimplecal
       - lxappearance
       - lxrandr
-      - nitrogen
+      - xfdesktop
       - thunar
       - thunar-archive-plugin
       - thunar-media-tags-plugin
@@ -705,7 +704,7 @@
       - skippy-xd-git
       - betterlockscreen
       #- multilockscreen-git
-      - tint2-git
+      - tint2
       - polybar
       - jsoncpp
       - rxvt-unicode
@@ -723,7 +722,7 @@
       - galculator
       - gsimplecal
       - lxappearance
-      - nitrogen
+      - xfdesktop
       - lxrandr
       - thunar
       - thunar-archive-plugin
@@ -774,7 +773,7 @@
       - gsimplecal
       - lxappearance
       - lxrandr
-      - nitrogen
+      - xfdesktop
       - thunar
       - thunar-archive-plugin
       - thunar-media-tags-plugin
@@ -790,7 +789,7 @@
       - wmname
       - betterlockscreen
       #- multilockscreen-git
-      - tint2-git
+      - tint2
       - polybar
       - jsoncpp
       - rxvt-unicode
@@ -816,7 +815,7 @@
       - udiskie
       - ueberzug
       - gsimplecal
-      - nitrogen
+      - xfdesktop
       - thunar
       - thunar-archive-plugin
       - thunar-media-tags-plugin
@@ -833,7 +832,7 @@
       - betterlockscreen
       #- multilockscreen-git
       - skippy-xd-git
-      - tint2-git
+      - tint2
       - polybar
       - jsoncpp
       - rxvt-unicode
@@ -896,8 +895,6 @@
   packages:
     - virtualbox
     - virtualbox-host-modules-arch
-    - virtualbox-host-dkms
-    - virtualbox-guest-dkms
     - virtualbox-guest-utils
     - virtualbox-guest-iso
 
