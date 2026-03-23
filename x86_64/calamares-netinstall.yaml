@@ -78,6 +78,7 @@
   critical: false
   hidden: false
   selected: true
+  expanded: true
   subgroups:
   - name: "Xorg"
     description: "xorg Apps, server"
@@ -262,6 +263,7 @@
   critical: false
   hidden: false
   selected: true
+  expanded: true
   subgroups:
   - name: "Ctlos pkgs"
     critical: false
@@ -270,17 +272,16 @@
     packages:
       - base-skel
       - ctlos-welcome
-      - ctlos-helper
       - ctlos-wall
-  - name: "Gtk engines"
-    critical: false
-    hidden: false
-    selected: true
-    expanded: true
-    packages:
-      - gtk-engines
-      - gtk-engine-murrine
-      - xdg-user-dirs-gtk
+      # - ctlos-helper
+  # - name: "Gtk engines"
+  #   critical: false
+  #   hidden: false
+  #   selected: true
+  #   expanded: true
+  #   packages:
+  #     - gtk-engines
+  #     - gtk-engine-murrine
   - name: "Qt"
     critical: false
     hidden: false
@@ -328,6 +329,7 @@
     packages:
       - gnome-keyring
       - yay-bin
+      - micro
       - inxi
       - downgrade
       - tldr
@@ -383,6 +385,7 @@
     hidden: false
     selected: true
     packages:
+      - xdg-user-dirs-gtk
       - timeshift
       - pamac-aur
       - libpamac-aur
