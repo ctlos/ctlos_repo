@@ -117,6 +117,12 @@
       - nvidia-dkms
       - nvidia-settings
       - nvidia-utils
+  - name: "Nvidia Open video Drivers"
+    selected: false
+    packages:
+      - nvidia-open
+      - nvidia-open-lts
+      - nvidia-open-dkms
   - name: "Video Acceleration"
     selected: true
     packages:
