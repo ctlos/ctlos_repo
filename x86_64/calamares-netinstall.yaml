@@ -386,6 +386,7 @@
       - unclutter
       - ueberzug
       - jq
+      - hsetroot
   - name: "Ctlos gui depends"
     critical: false
     hidden: false
