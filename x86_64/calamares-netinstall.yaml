@@ -544,13 +544,13 @@
       - gwenview
       - fwupd
       - extra-cmake-modules
+      - plasma-applet-window-buttons
       - libdbusmenu-glib
       - libdbusmenu-gtk3
-      - libdbusmenu-gtk2
+      # - libdbusmenu-gtk2
       - libdbusmenu-qt5
       - lib32-libdbusmenu-glib
-      - lib32-libdbusmenu-gtk2
-      - applet-window-buttons-git
+      # - lib32-libdbusmenu-gtk2
   - name: "Budgie"
     description: "Desktop environment"
     critical: false
