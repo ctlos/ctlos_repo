@@ -449,6 +449,7 @@
       - baobab
       - gnome-system-monitor
       - gnome-usage
+      - gnome-boxes
       - vlc
       - qbittorrent
       - evolution
@@ -500,6 +501,7 @@
       - mc
       - lf
       - yazi
+      - openbsd-netcat
       - glances
       - whois
       - mtr
