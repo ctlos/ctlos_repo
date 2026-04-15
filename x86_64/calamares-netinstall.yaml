@@ -433,18 +433,17 @@
   critical: false
   hidden: false
   selected: true
+  expanded: true
   subgroups:
   - name: "Gui programs"
     critical: false
     hidden: false
     selected: false
-    expanded: false
     packages:
       - timeshift
       - flatpak
       - chromium
       - code
-      - neovim
       - filezilla
       - bleachbit
       - baobab
@@ -455,6 +454,7 @@
       - evolution
       - thunderbird
       - localsend-bin
+      - flameshot
       - foliate
       - darktable
       - gimp
@@ -462,8 +462,11 @@
       - blender
       - krita
       - obs-studio
+      - avidemux-qt
       - handbrake
       - kdenlive
+      - foliate
+      - xreader
       - obsidian
       - minder
       - libreoffice-fresh
@@ -474,6 +477,10 @@
       - mixxx
       - freecad
       - deskflow
+      - engrampa
+      - konsole
+      - wireshark-qt
+      - zenmap
   - name: "Cli utils"
     critical: false
     hidden: false
@@ -481,6 +488,57 @@
     packages:
       - docker
       - docker-compose
+      - neovim
+      - fish
+      - cron
+      - reflector
+      - hblock
+      - rclone
+      - nftables
+      - xclip
+      - btop
+      - mc
+      - lf
+      - yazi
+      - glances
+      - whois
+      - mtr
+      - traceroute
+      - hwinfo
+      - hardinfo2
+      - man-pages
+      - man-pages-ru
+      - fd
+      - lsd
+      - ripgrep
+      - eza
+      - fzf
+      - zoxide
+      - thefuck
+      - direnv
+      - aircrack-ng
+      - github-cli
+      - rawtherapee
+      - lazygit
+      - lazydocker
+      - nvtop
+      - ddgr
+  - name: "Icons"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - obsidian-icon-theme
+      - kora-icon-theme
+  - name: "Fonts"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - ttf-jetbrains-mono-nerd
+      - ttf-dejavu-nerd
+      - terminus-font
+      - noto-fonts
   - name: "AI tools"
     critical: false
     hidden: false
@@ -488,6 +546,7 @@
     packages:
       - opencode
       - ollama
+      - aichat
 
 - name: "Desktop environment / Среды рабочего стола"
   description: "Install Desktop environment"
