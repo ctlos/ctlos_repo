@@ -432,7 +432,7 @@
   description: "software & utils"
   critical: false
   hidden: false
-  selected: true
+  selected: false
   expanded: true
   subgroups:
   - name: "Gui programs"
@@ -560,7 +560,6 @@
     critical: false
     hidden: false
     selected: true
-    expanded: true
     packages:
       - xfce-skel
       - polkit-gnome
