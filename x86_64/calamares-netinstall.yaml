@@ -409,8 +409,6 @@
       - keepassxc
       - veracrypt
       - telegram-desktop
-      - qbittorrent
-      - localsend-bin
 
 - name: "Dm"
   description: "Login manager"
@@ -429,6 +427,67 @@
       - qt5-quickcontrols2
       - qt5-graphicaleffects
       - ctlos-sddm-themes
+
+- name: "Other soft"
+  description: "software & utils"
+  critical: false
+  hidden: false
+  selected: true
+  subgroups:
+  - name: "Gui programs"
+    critical: false
+    hidden: false
+    selected: false
+    expanded: false
+    packages:
+      - timeshift
+      - flatpak
+      - chromium
+      - code
+      - neovim
+      - filezilla
+      - bleachbit
+      - baobab
+      - gnome-system-monitor
+      - gnome-usage
+      - vlc
+      - qbittorrent
+      - evolution
+      - thunderbird
+      - localsend-bin
+      - foliate
+      - darktable
+      - gimp
+      - inkscape
+      - blender
+      - krita
+      - obs-studio
+      - handbrake
+      - kdenlive
+      - obsidian
+      - minder
+      - libreoffice-fresh
+      - librecad
+      - audacity
+      - ardour
+      - hydrogen
+      - mixxx
+      - freecad
+      - deskflow
+  - name: "Cli utils"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - docker
+      - docker-compose
+  - name: "AI tools"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - opencode
+      - ollama
 
 - name: "Desktop environment / Среды рабочего стола"
   description: "Install Desktop environment"
@@ -527,6 +586,7 @@
       - plasma-meta
       - kde-system-meta
       - plasma-wayland-session
+      # - plasma-x11-session
       - egl-wayland
       - plasma-desktop
       - kde-utilities-meta
