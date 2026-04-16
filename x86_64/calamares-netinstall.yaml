@@ -621,10 +621,10 @@
     hidden: false
     selected: false
     packages:
+      - gdm
       - gnome-skel
       - gnome-shell
       - gnome-shell-extensions
-      - gdm
       - chrome-gnome-shell
       - firefox-extension-gnome-shell-integration
       - gnome-shell-extension-dash-to-panel
