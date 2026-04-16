@@ -496,7 +496,6 @@
       - docker-compose
       - neovim
       - fish
-      - cron
       - reflector
       - hblock
       - rclone
@@ -504,7 +503,6 @@
       - xclip
       - aerc
       - btop
-      - mc
       - lf
       - yazi
       - duf
