@@ -497,7 +497,6 @@
       - docker-compose
       - neovim
       - fish
-      - reflector
       - hblock
       - rclone
       - nftables
@@ -624,7 +623,7 @@
       - gnome-skel
       - gnome-shell
       - gnome-shell-extensions
-      - chrome-gnome-shell
+      - gnome-browser-connector
       - firefox-extension-gnome-shell-integration
       - gnome-shell-extension-dash-to-panel
       - gnome-shell-extension-just-perfection-desktop
