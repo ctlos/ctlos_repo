@@ -208,6 +208,8 @@
     - geoip
     - bluez
     - bluez-utils
+    - bluez-hid2hci
+    - bluez-libs
 
 - name: "Other Network"
   description: "Drivers"
@@ -534,6 +536,7 @@
       - nvtop
       - ddgr
       - weechat
+      - zram-generator
   - name: "Icons"
     critical: false
     hidden: false
