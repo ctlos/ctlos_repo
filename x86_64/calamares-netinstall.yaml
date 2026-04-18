@@ -12,6 +12,7 @@
     - man-pages
     - mdadm
     - memtest86+
+    - memtest86+-efi
     - logrotate
     - s-nail
     - systemd-resolvconf
@@ -103,7 +104,7 @@
       - xf86-video-fbdev
       - xf86-video-dummy
       - xf86-video-sisusb
-      - xf86-video-vmware
+      # - xf86-video-vmware
       - xf86-video-voodoo
   - name: "Xorg video Drivers(Other)"
     selected: false
@@ -128,12 +129,12 @@
     packages:
       - mesa
       - mesa-utils
-      - mesa-vdpau
+      # - mesa-vdpau
       - intel-tbb
       - libva
       - libva-mesa-driver
       - libva-intel-driver
-      - libva-vdpau-driver
+      # - libva-vdpau-driver
   - name: "Video Acceleration (mesa-amber)"
     selected: false
     packages:
@@ -162,7 +163,6 @@
     - device-mapper
     - btrfs-progs
     - f2fs-tools
-    - reiserfsprogs
     - exfatprogs
     - xfsprogs
     - jfsutils
@@ -178,7 +178,6 @@
     - gvfs
     - gvfs-afc
     - gvfs-goa
-    - gvfs-google
     - gvfs-gphoto2
     - gvfs-mtp
     - gvfs-nfs
@@ -375,7 +374,7 @@
       - cronie
       - chrpath
       - expac
-      - gtk2-perl
+      # - gtk2-perl
       - perl-file-desktopentry
       - intltool
       - pv
@@ -637,8 +636,8 @@
       - gnome-terminal
       - gnome-tweaks
       - nautilus
-      - nautilus-sendto
-      - seahorse-nautilus
+      # - nautilus-sendto
+      # - seahorse-nautilus
       - nautilus-image-converter
       - nautilus-share
       - python-nautilus
