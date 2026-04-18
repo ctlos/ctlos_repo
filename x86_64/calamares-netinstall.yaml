@@ -350,13 +350,9 @@
       - zsh-fast-syntax-highlighting
       - pipe-viewer-git
       - cava
-      - gotop-bin
       - tmux
       - sysstat
-      - htop
       - scrot
-      - mc
-      - ranger
       - rofi
       - mpd
       - mpc
@@ -381,8 +377,6 @@
       - imagemagick
       - w3m
       - slop
-      - tor
-      - privoxy
       - xdotool
       - yad
       - unclutter
@@ -432,14 +426,14 @@
       - qt5-graphicaleffects
       - ctlos-sddm-themes
 
-- name: "Other soft"
-  description: "software & utils"
+- name: "Other Applications"
+  description: "GUI & CLI apps for daily use / Графические и консольные приложения"
   critical: false
   hidden: false
   selected: false
   expanded: true
   subgroups:
-  - name: "Gui programs"
+  - name: "Gui Applications"
     critical: false
     hidden: false
     selected: false
@@ -490,7 +484,7 @@
       - konsole
       - wireshark-qt
       - zenmap
-  - name: "Cli utils"
+  - name: "Terminal Tools / CLI"
     critical: false
     hidden: false
     selected: false
@@ -502,10 +496,16 @@
       - hblock
       - rclone
       - nftables
+      - logrotate
       - xclip
       - aerc
       - btop
+      - htop
+      - bottom
+      - nvtop
       - lf
+      - mc
+      - ranger
       - yazi
       - duf
       - dua-cli
@@ -533,9 +533,10 @@
       - rawtherapee
       - lazygit
       - lazydocker
-      - nvtop
       - ddgr
       - weechat
+      - tor
+      - privoxy
       - zram-generator
   - name: "Icons"
     critical: false
@@ -563,14 +564,14 @@
       - aichat
 
 - name: "Desktop environment / Среды рабочего стола"
-  description: "Install Desktop environment"
+  description: "Full DE installations / Полные установки сред рабочего стола"
   critical: false
   hidden: false
   selected: false
   expanded: true
   subgroups:
   - name: "Xfce"
-    description: "Desktop environment"
+    description: "Lightweight, stable / Легковесная, стабильная"
     critical: false
     hidden: false
     selected: true
@@ -617,7 +618,7 @@
       #- multilockscreen-git
       - skippy-xd-git
   - name: "GNOME"
-    description: "Desktop environment"
+    description: "Modern, polished DE / Современная, отполированная среда"
     critical: false
     hidden: false
     selected: false
@@ -650,7 +651,7 @@
       - dconf-editor
       - fwupd
   - name: "KDE Plasma"
-    description: "Desktop environment"
+    description: "Feature-rich, customizable / Многофункциональная, настраиваемая"
     critical: false
     hidden: false
     selected: false
@@ -658,7 +659,6 @@
       - plasma-skel
       - plasma-meta
       - kde-system-meta
-      - plasma-wayland-session
       # - plasma-x11-session
       - egl-wayland
       - plasma-desktop
@@ -704,7 +704,7 @@
       - dconf-editor
       - network-manager-applet
   - name: "Cinnamon"
-    description: "Desktop environment"
+    description: "Traditional layout, user-friendly / Традиционный интерфейс, удобный"
     critical: false
     hidden: false
     selected: false
@@ -721,7 +721,7 @@
       - nemo-seahorse
       - nemo-share
   - name: "Mate"
-    description: "Desktop environment"
+    description: "Classic GNOME 2 experience / Классический опыт GNOME 2"
     critical: false
     hidden: false
     selected: false
@@ -756,14 +756,14 @@
       - pavucontrol-qt
 
 - name: "Window managers / Оконные менеджеры"
-  description: "Install Window manager"
+  description: "Minimal WM setups / Минималистичные настройки оконных менеджеров"
   critical: false
   hidden: false
   selected: false
   expanded: true
   subgroups:
   - name: "Openbox"
-    description: "Window manager"
+    description: "Lightweight stacking WM / Легковесный стековый менеджер"
     critical: false
     hidden: false
     selected: false
@@ -810,7 +810,7 @@
       - betterlockscreen
       #- multilockscreen-git
   - name: "Bspwm"
-    description: "Tiling window manager"
+    description: "Binary space partitioning WM / Менеджер с бинарным разбиением"
     critical: false
     hidden: false
     selected: false
@@ -854,7 +854,7 @@
       - rxvt-unicode
       - urxvt-perls
   - name: "I3 wm"
-    description: "Tiling window manager"
+    description: "Tiling WM X11 / Плиточный менеджер"
     critical: false
     hidden: false
     selected: false
@@ -982,7 +982,7 @@
       - rxvt-unicode
       - urxvt-perls
   - name: "Sway wm"
-    description: "Tiling window manager wayland"
+    description: "Tiling WM Wayland / Плиточный менеджер"
     critical: false
     hidden: false
     selected: false
