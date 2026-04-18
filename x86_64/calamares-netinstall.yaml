@@ -349,7 +349,6 @@
       - zsh-autosuggestions
       - zsh-fast-syntax-highlighting
       - pipe-viewer-git
-      - cava
       - tmux
       - sysstat
       - scrot
@@ -503,6 +502,7 @@
       - htop
       - bottom
       - nvtop
+      - cava
       - lf
       - mc
       - ranger
@@ -790,7 +790,7 @@
       - file-roller
       - flameshot
       - mousepad
-      - pavucontrol
+      - pavucontrol-qt
       - viewnior
       - xreader
       - djvulibre
@@ -840,7 +840,7 @@
       - tumbler
       - flameshot
       - mousepad
-      - pavucontrol
+      - pavucontrol-qt
       - viewnior
       - xreader
       - parcellite
@@ -878,7 +878,7 @@
       - file-roller
       - flameshot
       - mousepad
-      - pavucontrol
+      - pavucontrol-qt
       - viewnior
       - xreader
       - djvulibre
@@ -925,7 +925,7 @@
       - tumbler
       - flameshot
       - mousepad
-      - pavucontrol
+      - pavucontrol-qt
       - viewnior
       - xreader
       - djvulibre
@@ -967,7 +967,7 @@
       - tumbler
       - flameshot
       - mousepad
-      - pavucontrol
+      - pavucontrol-qt
       - viewnior
       - xreader
       - djvulibre
@@ -1011,7 +1011,7 @@
       - brightnessctl
       - lxappearance
       - network-manager-applet
-      - pavucontrol
+      - pavucontrol-qt
       - pamixer
       - dex
       - imv
