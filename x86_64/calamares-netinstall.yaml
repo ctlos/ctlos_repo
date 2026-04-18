@@ -448,7 +448,6 @@
       - gnome-system-monitor
       - gnome-usage
       - gnome-boxes
-      - vlc
       - qbittorrent
       - fragments
       - evolution
@@ -462,27 +461,33 @@
       - inkscape
       - blender
       - krita
-      - obs-studio
-      - avidemux-qt
-      - handbrake
-      - kdenlive
-      - foliate
-      - xreader
-      - obsidian
-      - minder
-      - libreoffice-fresh
-      - librecad
-      - easyeffects
-      - audacity
-      - ardour
-      - hydrogen
-      - mixxx
-      - freecad
       - deskflow
       - engrampa
       - konsole
       - wireshark-qt
       - zenmap
+  - name: "Office & Productivity"
+    packages:
+      - obsidian
+      - libreoffice-fresh
+      - onlyoffice-bin
+      - foliate
+      - xreader
+      - minder
+      - librecad
+      - freecad
+  - name: "Multimedia"
+    packages:
+      - vlc
+      - obs-studio
+      - avidemux-qt
+      - handbrake
+      - kdenlive
+      - easyeffects
+      - audacity
+      - ardour
+      - hydrogen
+      - mixxx
   - name: "Terminal Tools / CLI"
     critical: false
     hidden: false
