@@ -442,6 +442,7 @@
       - chromium
       - brave-bin
       - code
+      - engrampa
       - filezilla
       - bleachbit
       - baobab
@@ -462,8 +463,6 @@
       - blender
       - krita
       - deskflow
-      - engrampa
-      - konsole
       - wireshark-qt
       - zenmap
   - name: "Office & Productivity"
@@ -478,12 +477,12 @@
       - freecad
   - name: "Multimedia"
     packages:
+      - easyeffects
       - vlc
       - obs-studio
       - avidemux-qt
       - handbrake
       - kdenlive
-      - easyeffects
       - audacity
       - ardour
       - hydrogen
@@ -620,7 +619,6 @@
       - xfce4-windowck-plugin
       - xfce4-docklike-plugin
       - betterlockscreen
-      #- multilockscreen-git
       - skippy-xd-git
   - name: "GNOME"
     description: "Modern, polished DE / Современная, отполированная среда"
@@ -986,48 +984,48 @@
       - jsoncpp
       - rxvt-unicode
       - urxvt-perls
-  - name: "Sway wm"
-    description: "Tiling WM Wayland / Плиточный менеджер"
-    critical: false
-    hidden: false
-    selected: false
-    packages:
-      - sway-skel
-      - xorg-xhost
-      - kitty
-      - polkit-gnome
-      - boost-libs
-      - sway
-      - swayidle
-      - swaylock
-      - swaybg
-      - waybar
-      - grim
-      - slurp
-      - mako
-      - gtk-layer-shell
-      - egl-wayland
-      - wayland-protocols
-      - wl-clipboard
-      - wofi
-      - xdg-desktop-portal-wlr
-      - xorg-xwayland
-      - acpi
-      - brightnessctl
-      - lxappearance
-      - network-manager-applet
-      - pavucontrol-qt
-      - pamixer
-      - dex
-      - imv
-      - thunar
-      - thunar-archive-plugin
-      - thunar-media-tags-plugin
-      - thunar-volman
-      - tumbler
-      - galculator
-      - file-roller
-      - mousepad
+  # - name: "Sway wm"
+  #   description: "Tiling WM Wayland / Плиточный менеджер"
+  #   critical: false
+  #   hidden: false
+  #   selected: false
+  #   packages:
+  #     - sway-skel
+  #     - xorg-xhost
+  #     - kitty
+  #     - polkit-gnome
+  #     - boost-libs
+  #     - sway
+  #     - swayidle
+  #     - swaylock
+  #     - swaybg
+  #     - waybar
+  #     - grim
+  #     - slurp
+  #     - mako
+  #     - gtk-layer-shell
+  #     - egl-wayland
+  #     - wayland-protocols
+  #     - wl-clipboard
+  #     - wofi
+  #     - xdg-desktop-portal-wlr
+  #     - xorg-xwayland
+  #     - acpi
+  #     - brightnessctl
+  #     - lxappearance
+  #     - network-manager-applet
+  #     - pavucontrol-qt
+  #     - pamixer
+  #     - dex
+  #     - imv
+  #     - thunar
+  #     - thunar-archive-plugin
+  #     - thunar-media-tags-plugin
+  #     - thunar-volman
+  #     - tumbler
+  #     - galculator
+  #     - file-roller
+  #     - mousepad
 
 - name: "Ctlos system pkg"
   critical: false
