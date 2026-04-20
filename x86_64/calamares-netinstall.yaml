@@ -858,8 +858,6 @@
       - tint2
       - polybar
       - jsoncpp
-      - rxvt-unicode
-      - urxvt-perls
   - name: "I3 wm"
     description: "Tiling WM X11 / Плиточный менеджер"
     critical: false
