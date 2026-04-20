@@ -326,6 +326,7 @@
       - ttf-roboto-mono
       - ttf-clear-sans
       - ttf-hack-nerd
+      - ttf-jetbrains-mono-nerd
       - ttf-weather-icons
       - otb-uw_ttyp0
       - noto-fonts-cjk
@@ -338,6 +339,7 @@
       - gnome-keyring
       - yay-bin
       - reflector
+      - bottom
       - micro
       - inxi
       - downgrade
@@ -383,6 +385,8 @@
       - ueberzug
       - jq
       - hsetroot
+      - tor
+      - privoxy
   - name: "Ctlos gui depends"
     critical: false
     hidden: false
@@ -540,8 +544,6 @@
       - lazydocker
       - ddgr
       - weechat
-      - tor
-      - privoxy
       - zram-generator
   - name: "Icons"
     critical: false
@@ -820,6 +822,7 @@
     selected: false
     packages:
       - bspwm-skel
+      - alacritty
       - polkit-gnome
       - galculator
       - network-manager-applet
@@ -878,7 +881,7 @@
       - thunar-volman
       - tumbler
       - xfce4-power-manager
-      - xfce4-terminal
+      - alacritty
       - file-roller
       - flameshot
       - mousepad
@@ -905,6 +908,7 @@
     selected: false
     packages:
       - frankenwm-skel
+      - alacritty
       - xcb-util-wm
       - xcb-util-keysyms
       - polkit-gnome
@@ -940,8 +944,6 @@
       - tint2
       - polybar
       - jsoncpp
-      - rxvt-unicode
-      - urxvt-perls
       - sxhkd
   - name: "Xfwm4"
     description: "Window manager xfce"
@@ -950,6 +952,7 @@
     selected: false
     packages:
       - xfwm-skel
+      - alacritty
       - polkit-gnome
       - network-manager-applet
       - xfce4-power-manager
@@ -983,8 +986,6 @@
       - tint2
       - polybar
       - jsoncpp
-      - rxvt-unicode
-      - urxvt-perls
   # - name: "Sway wm"
   #   description: "Tiling WM Wayland / Плиточный менеджер"
   #   critical: false
