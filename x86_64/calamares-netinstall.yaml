@@ -459,6 +459,7 @@
       - evolution
       - thunderbird
       - element-desktop
+      - signal-desktop
       - localsend-bin
       - flameshot
       - blanket
