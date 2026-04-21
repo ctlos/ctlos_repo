@@ -502,11 +502,7 @@
       - docker-compose
       - neovim
       - fish
-      - hblock
-      - rclone
-      - nftables
-      - logrotate
-      - xclip
+      - starship
       - aerc
       - btop
       - htop
@@ -520,6 +516,11 @@
       - duf
       - dua-cli
       - trash-cli
+      - hblock
+      - rclone
+      - nftables
+      - logrotate
+      - xclip
       - openbsd-netcat
       - glances
       - whois
